@@ -19,9 +19,9 @@ const AboutSection = () => {
               <Image
                 src="https://placehold.co/300x300.png"
                 alt="Profile Picture"
-                width={250}
-                height={250}
-                className="rounded-full shadow-xl border-4 border-primary"
+                width={300} 
+                height={300}
+                className="w-[200px] h-[200px] md:w-[250px] md:h-[250px] rounded-full shadow-xl border-4 border-primary"
                 data-ai-hint="professional portrait"
               />
             </div>
