@@ -7,7 +7,7 @@ import { Briefcase, GraduationCap, Heart, Users, Zap, ArrowUp } from 'lucide-rea
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-16 md:py-24 bg-card text-card-foreground">
+    <section id="about" className="py-16 md:py-24 bg-background text-foreground">
       <div className="container mx-auto px-4">
         <AnimatedSection className="flex flex-col items-center">
           <h2 className="text-3xl md:text-4xl font-headline font-bold text-center mb-12">
@@ -66,7 +66,7 @@ interface InfoCardProps {
 }
 
 const InfoCard: React.FC<InfoCardProps> = ({ icon, title, description }) => (
-  <Card className="bg-background shadow-md hover:shadow-lg transition-all duration-300 ease-out cursor-none transform hover:scale-105">
+  <Card className="bg-card shadow-md hover:shadow-lg transition-all duration-300 ease-out cursor-none transform hover:scale-105">
     <CardHeader className="flex flex-row items-center gap-4 pb-2">
       {icon}
       <CardTitle className="font-headline text-xl">{title}</CardTitle>
