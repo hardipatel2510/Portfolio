@@ -109,7 +109,7 @@ const ContactSection = () => {
                 <CardContent>
                   <div className="flex space-x-4">
                     <Button variant="outline" size="icon" asChild aria-label="LinkedIn Profile">
-                      <Link href="#" target="_blank" rel="noopener noreferrer">
+                      <Link href="https://www.linkedin.com/in/hardipatel2510/" target="_blank" rel="noopener noreferrer">
                         <Linkedin className="h-5 w-5" />
                       </Link>
                     </Button>
