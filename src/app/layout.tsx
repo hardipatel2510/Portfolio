@@ -1,6 +1,7 @@
 import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
+import ScrollToTopButton from '@/components/ScrollToTopButton';
 
 export const metadata: Metadata = {
   title: 'Zenithfolio - Portfolio',
@@ -24,6 +25,7 @@ export default function RootLayout({
       <body className="font-body antialiased">
         {children}
         <Toaster />
+        <ScrollToTopButton />
       </body>
     </html>
   );
