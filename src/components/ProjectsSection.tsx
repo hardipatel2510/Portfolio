@@ -43,9 +43,15 @@ const ProjectsSection = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 w-full max-w-4xl">
             {projectsData.map((project) => (
               <Card key={project.id} className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                {/* Image removed from here */}
                 <CardHeader>
-                  <CardTitle className="font-headline text-2xl">{project.title}</CardTitle>
+                  <div className="flex items-center space-x-2">
+                    <CardTitle className="font-headline text-2xl">{project.title}</CardTitle>
+                    <span
+                      className="h-3 w-3 rounded-full bg-primary animate-blink"
+                      title="Work in Progress"
+                      aria-label="Work in Progress"
+                    />
+                  </div>
                   <CardDescription className="font-body text-muted-foreground pt-1 min-h-[6rem]">
                     {project.description}
                   </CardDescription>
