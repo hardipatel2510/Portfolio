@@ -8,8 +8,8 @@ html {
 
 body {
   font-family: 'PT Sans', sans-serif; /* Default to body font */
-  /* Custom dot cursor, adapts to text color (currentColor) */
-  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'><circle cx='8' cy='8' r='4' fill='currentColor'/></svg>") 8 8, auto;
+  /* Custom dot cursor, fixed lilac color */
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'><circle cx='8' cy='8' r='4' fill='hsl(275, 65%, 70%)'/></svg>") 8 8, auto;
 }
 
 /* Override for specific interactive elements to use no cursor or standard cursors */
@@ -116,6 +116,5 @@ textarea {
   }
   body {
     @apply bg-background text-foreground;
-    /* The global cursor is set above and will use currentColor from text-foreground */
   }
 }
