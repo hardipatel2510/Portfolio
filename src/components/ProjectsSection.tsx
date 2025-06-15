@@ -46,7 +46,7 @@ const ProjectsSection = () => {
                 <CardHeader>
                   <div className="flex items-center space-x-2">
                     <CardTitle className="font-headline text-2xl">{project.title}</CardTitle>
-                    <span className="text-xs text-muted-foreground font-code">(In Progress)</span>
+                    <span className="text-xs text-primary font-code animate-blink-text">(Working)</span>
                   </div>
                   <CardDescription className="font-body text-muted-foreground pt-1 min-h-[6rem]">
                     {project.description}
