@@ -21,7 +21,7 @@ const AboutSection = () => {
                 alt="Profile Picture"
                 width={250} 
                 height={250}
-                className="w-[200px] h-[200px] md:w-[250px] md:h-[250px] shadow-xl border-4 border-primary"
+                className="w-[200px] h-[200px] md:w-[250px] md:h-[250px] rounded-lg shadow-xl border-4 border-primary"
                 data-ai-hint="professional portrait"
               />
             </div>
