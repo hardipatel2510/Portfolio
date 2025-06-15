@@ -76,37 +76,37 @@ textarea {
     --sidebar-ring: 275 65% 70%;
   }
   .dark {
-    --background: 270 15% 15%; /* Dark desaturated purple-gray */
-    --foreground: 270 20% 90%; /* Light grayish purple text */
-    --card: 270 15% 18%; /* Slightly lighter dark card */
-    --card-foreground: 270 20% 90%;
-    --popover: 270 15% 18%;
-    --popover-foreground: 270 20% 90%;
-    --primary: 275 65% 70%; /* Lilac (same as light for pop) */
-    --primary-foreground: 270 10% 10%; /* Darker text on primary for contrast */
-    --secondary: 270 15% 25%; /* Darker secondary */
-    --secondary-foreground: 270 20% 90%;
-    --muted: 270 15% 25%;
-    --muted-foreground: 270 15% 60%;
-    --accent: 330 70% 75%; /* Soft Pink (same as light for pop) */
-    --accent-foreground: 270 10% 10%; /* Darker text on accent for contrast */
-    --destructive: 0 60% 55%; /* Adjusted destructive for dark */
-    --destructive-foreground: 0 0% 100%;
-    --border: 270 15% 25%;
-    --input: 270 15% 25%;
-    --ring: 275 65% 70%;
+    --background: 0 0% 0%; /* Pure black */
+    --foreground: 270 20% 95%; /* Very light grayish purple text */
+    --card: 0 0% 7%; /* Very dark gray, slightly off-black */
+    --card-foreground: 270 20% 95%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 270 20% 95%;
+    --primary: 275 65% 70%; /* Lilac */
+    --primary-foreground: 270 10% 10%; /* Dark text on primary for contrast */
+    --secondary: 0 0% 12%; /* Dark gray */
+    --secondary-foreground: 270 20% 80%; /* Slightly dimmer light text */
+    --muted: 0 0% 10%; /* Darker gray for muted elements */
+    --muted-foreground: 270 15% 60%; /* More subdued light text */
+    --accent: 330 70% 75%; /* Soft Pink */
+    --accent-foreground: 270 10% 10%; /* Dark text on accent for contrast */
+    --destructive: 0 70% 55%; /* Brighter red for contrast on black */
+    --destructive-foreground: 0 0% 100%; /* White text on destructive */
+    --border: 0 0% 15%; /* Subtle gray border */
+    --input: 0 0% 15%; /* Matching input border/bg */
+    --ring: 275 65% 70%; /* Lilac ring */
     --chart-1: 275 65% 70%;
     --chart-2: 330 70% 75%;
     --chart-3: 260 50% 65%;
     --chart-4: 300 60% 70%;
     --chart-5: 240 50% 70%;
-    --sidebar-background: 270 15% 20%; /* Darker purple-gray for sidebar */
-    --sidebar-foreground: 270 20% 85%;
-    --sidebar-primary: 275 65% 70%; /* Primary lilac */
+    --sidebar-background: 0 0% 3%; /* Almost black, very subtle diff from main bg */
+    --sidebar-foreground: 270 20% 90%;
+    --sidebar-primary: 275 65% 70%; 
     --sidebar-primary-foreground: 270 10% 10%;
-    --sidebar-accent: 270 15% 28%;
+    --sidebar-accent: 0 0% 10%; /* Dark gray for sidebar accents */
     --sidebar-accent-foreground: 270 20% 90%;
-    --sidebar-border: 270 15% 28%;
+    --sidebar-border: 0 0% 10%;
     --sidebar-ring: 275 65% 70%;
   }
 }
