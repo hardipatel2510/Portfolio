@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  font-family: 'PT Sans', sans-serif; /* Default to body font */
+  font-family: 'Source Code Pro', monospace; /* Default to body font */
   /* Custom dot cursor, fixed lilac color */
   cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'><circle cx='8' cy='8' r='4' fill='hsl(275, 65%, 70%)'/></svg>") 8 8, auto;
 }
@@ -22,7 +22,8 @@ input[type="checkbox"],
 input[type="radio"],
 input[type="submit"],
 input[type="reset"],
-label[for] /* labels associated with inputs, if clickable */ {
+label[for], /* labels associated with inputs, if clickable */
+.cursor-none /* Apply to cards/tiles */ {
   cursor: none; /* Hide cursor on hover for these elements */
 }
 
