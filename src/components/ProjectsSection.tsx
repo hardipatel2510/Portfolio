@@ -1,0 +1,112 @@
+// components/ProjectsSection.tsx
+"use client";
+import Image from 'next/image';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import AnimatedSection from './AnimatedSection';
+import { Github, ExternalLink } from 'lucide-react';
+import Link from 'next/link';
+
+interface Project {
+  id: string;
+  title: string;
+  description: string;
+  imageUrl: string;
+  imageHint: string;
+  tags: string[];
+  liveLink?: string;
+  githubLink?: string;
+}
+
+const projectsData: Project[] = [
+  {
+    id: '1',
+    title: 'E-commerce Platform',
+    description: 'A full-featured e-commerce website with product listings, cart functionality, and user accounts. Built with Next.js, Tailwind CSS, and Stripe integration.',
+    imageUrl: 'https://placehold.co/600x400.png',
+    imageHint: 'e-commerce website',
+    tags: ['Next.js', 'TypeScript', 'Stripe', 'Tailwind CSS'],
+    liveLink: '#',
+    githubLink: '#',
+  },
+  {
+    id: '2',
+    title: 'Portfolio CMS',
+    description: 'A custom content management system for creative professionals to manage their portfolios. Features a drag-and-drop interface and AI-powered content suggestions.',
+    imageUrl: 'https://placehold.co/600x400.png',
+    imageHint: 'cms dashboard',
+    tags: ['React', 'Node.js', 'MongoDB', 'GraphQL'],
+    githubLink: '#',
+  },
+  {
+    id: '3',
+    title: 'Interactive Data Visualization Tool',
+    description: 'A web application for visualizing complex datasets with interactive charts and graphs. Leverages D3.js for powerful and customizable visualizations.',
+    imageUrl: 'https://placehold.co/600x400.png',
+    imageHint: 'data charts',
+    tags: ['D3.js', 'JavaScript', 'Python', 'Flask'],
+    liveLink: '#',
+  },
+];
+
+const ProjectsSection = () => {
+  return (
+    <section id="projects" className="py-16 md:py-24 bg-background">
+      <div className="container mx-auto px-4">
+        <AnimatedSection className="flex flex-col items-center">
+          <h2 className="text-3xl md:text-4xl font-headline font-bold text-center mb-12">
+            Featured Projects
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projectsData.map((project) => (
+              <Card key={project.id} className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="relative h-48 w-full">
+                  <Image
+                    src={project.imageUrl}
+                    alt={project.title}
+                    layout="fill"
+                    objectFit="cover"
+                    data-ai-hint={project.imageHint}
+                  />
+                </div>
+                <CardHeader>
+                  <CardTitle className="font-headline text-2xl">{project.title}</CardTitle>
+                  <CardDescription className="font-body text-muted-foreground pt-1 h-20 overflow-hidden"> {/* Fixed height for description */}
+                    {project.description}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="flex-grow">
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tags.map((tag) => (
+                      <span key={tag} className="px-2 py-1 bg-primary/10 text-primary text-xs font-code rounded-full">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </CardContent>
+                <CardFooter className="flex justify-end space-x-2">
+                  {project.githubLink && (
+                    <Button variant="outline" size="sm" asChild>
+                      <Link href={project.githubLink} target="_blank" rel="noopener noreferrer" aria-label={`GitHub repository for ${project.title}`}>
+                        <Github className="mr-2 h-4 w-4" /> GitHub
+                      </Link>
+                    </Button>
+                  )}
+                  {project.liveLink && (
+                    <Button variant="default" size="sm" asChild>
+                      <Link href={project.liveLink} target="_blank" rel="noopener noreferrer" aria-label={`Live demo of ${project.title}`}>
+                        <ExternalLink className="mr-2 h-4 w-4" /> Live Demo
+                      </Link>
+                    </Button>
+                  )}
+                </CardFooter>
+              </Card>
+            ))}
+          </div>
+        </AnimatedSection>
+      </div>
+    </section>
+  );
+};
+
+export default ProjectsSection;
