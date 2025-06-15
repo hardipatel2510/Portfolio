@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import AnimatedSection from './AnimatedSection';
-import { Github, Linkedin, Mail, Send, Instagram } from 'lucide-react'; // Added Instagram
+import { Github, Linkedin, Mail, Send, Instagram } from 'lucide-react';
 import Link from 'next/link';
 import { useActionState, useEffect, useRef } from 'react'; 
 import { useFormStatus } from 'react-dom';
@@ -53,7 +53,7 @@ const ContactSection = () => {
             Get In Touch
           </h2>
           <div className="grid lg:grid-cols-2 gap-12 w-full max-w-4xl">
-            <Card className="bg-background shadow-lg">
+            <Card className="bg-background shadow-lg hover:shadow-xl transition-all duration-300 ease-out cursor-pointer transform hover:scale-105">
               <CardHeader>
                 <CardTitle className="font-headline text-2xl flex items-center">
                   <Mail className="mr-3 h-6 w-6 text-primary" /> Send me a message
@@ -86,7 +86,7 @@ const ContactSection = () => {
             </Card>
             
             <div className="space-y-8">
-              <Card className="bg-background shadow-lg">
+              <Card className="bg-background shadow-lg hover:shadow-xl transition-all duration-300 ease-out cursor-pointer transform hover:scale-105">
                 <CardHeader>
                   <CardTitle className="font-headline text-2xl">Contact Information</CardTitle>
                 </CardHeader>
@@ -101,7 +101,7 @@ const ContactSection = () => {
                 </CardContent>
               </Card>
 
-              <Card className="bg-background shadow-lg">
+              <Card className="bg-background shadow-lg hover:shadow-xl transition-all duration-300 ease-out cursor-pointer transform hover:scale-105">
                 <CardHeader>
                   <CardTitle className="font-headline text-2xl">Connect With Me</CardTitle>
                 </CardHeader>

@@ -42,7 +42,7 @@ const ProjectsSection = () => {
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 w-full max-w-4xl">
             {projectsData.map((project) => (
-              <Card key={project.id} className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <Card key={project.id} className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 ease-out cursor-pointer transform hover:scale-105">
                 <CardHeader>
                   <div className="flex items-center space-x-2">
                     <CardTitle className="font-headline text-2xl">{project.title}</CardTitle>

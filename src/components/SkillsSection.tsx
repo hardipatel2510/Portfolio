@@ -3,7 +3,7 @@
 import { Progress } from '@/components/ui/progress';
 import AnimatedSection from './AnimatedSection';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Code2, Database, PencilRuler } from 'lucide-react'; // Removed TerminalSquare, Server, Settings2
+import { Code2, Database, PencilRuler } from 'lucide-react';
 
 interface Skill {
   name: string;
@@ -54,7 +54,7 @@ const SkillsSection = () => {
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-4xl justify-center">
             {skillsData.map((category) => (
-              <Card key={category.name} className="shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <Card key={category.name} className="shadow-lg hover:shadow-xl transition-all duration-300 ease-out cursor-pointer transform hover:scale-105">
                 <CardHeader className="flex flex-row items-center space-x-3 pb-4">
                   {category.icon}
                   <CardTitle className="font-headline text-xl">{category.name}</CardTitle>

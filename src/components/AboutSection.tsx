@@ -17,10 +17,10 @@ const AboutSection = () => {
           <div className="grid md:grid-cols-3 gap-8 items-start">
             <div className="md:col-span-1 flex justify-center">
               <Image
-                src="https://placehold.co/300x300.png"
+                src="https://placehold.co/250x250.png"
                 alt="Profile Picture"
-                width={300} 
-                height={300}
+                width={250} 
+                height={250}
                 className="w-[200px] h-[200px] md:w-[250px] md:h-[250px] rounded-full shadow-xl border-4 border-primary"
                 data-ai-hint="professional portrait"
               />
@@ -66,7 +66,7 @@ interface InfoCardProps {
 }
 
 const InfoCard: React.FC<InfoCardProps> = ({ icon, title, description }) => (
-  <Card className="bg-background shadow-md hover:shadow-lg transition-shadow">
+  <Card className="bg-background shadow-md hover:shadow-lg transition-all duration-300 ease-out cursor-pointer transform hover:scale-105">
     <CardHeader className="flex flex-row items-center gap-4 pb-2">
       {icon}
       <CardTitle className="font-headline text-xl">{title}</CardTitle>
