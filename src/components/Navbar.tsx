@@ -2,7 +2,7 @@
 "use client";
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { Menu, X, Briefcase, User, Brain, Mail } from 'lucide-react'; // Removed Palette
+import { Menu, X, Briefcase, User, Brain, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
@@ -46,7 +46,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="text-2xl font-headline font-bold text-primary">
-            Zenithfolio
+            Hardi Patel
           </Link>
 
           {/* Desktop Navigation */}
@@ -68,7 +68,7 @@ const Navbar = () => {
                 <div className="flex flex-col h-full">
                   <div className="flex items-center justify-between p-4 border-b">
                     <Link href="/" className="text-xl font-headline font-bold text-primary" onClick={() => setMobileMenuOpen(false)}>
-                      Zenithfolio
+                      Hardi Patel
                     </Link>
                     <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(false)} aria-label="Close navigation menu">
                       <X className="h-6 w-6" />
