@@ -12,7 +12,7 @@ body {
   cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'><circle cx='8' cy='8' r='4' fill='currentColor'/></svg>") 8 8, auto;
 }
 
-/* Override for specific interactive elements to use standard cursors */
+/* Override for specific interactive elements to use no cursor or standard cursors */
 a,
 button,
 [role="button"],
@@ -23,7 +23,7 @@ input[type="radio"],
 input[type="submit"],
 input[type="reset"],
 label[for] /* labels associated with inputs, if clickable */ {
-  cursor: pointer;
+  cursor: none; /* Hide cursor on hover for these elements */
 }
 
 input[type="text"],
