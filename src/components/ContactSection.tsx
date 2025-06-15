@@ -5,9 +5,9 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import AnimatedSection from './AnimatedSection';
-import { Github, Linkedin, Twitter, Mail, Send } from 'lucide-react';
+import { Github, Linkedin, Mail, Send } from 'lucide-react'; // Removed Twitter
 import Link from 'next/link';
-import { useActionState, useEffect, useRef } from 'react'; // Changed from react-dom
+import { useActionState, useEffect, useRef } from 'react'; 
 import { useFormStatus } from 'react-dom';
 import { submitContactForm, type ContactFormState } from '@/actions/contact';
 import { useToast } from '@/hooks/use-toast';
@@ -28,7 +28,7 @@ function SubmitButton() {
 }
 
 const ContactSection = () => {
-  const [state, formAction] = useActionState(submitContactForm, initialState); // Changed to useActionState
+  const [state, formAction] = useActionState(submitContactForm, initialState); 
   const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -98,7 +98,6 @@ const ContactSection = () => {
                     <Mail className="h-5 w-5 text-primary" />
                     <a href="mailto:hardi.2510p@gmail.com" className="font-body hover:text-primary transition-colors">hardi.2510p@gmail.com</a>
                   </div>
-                  {/* Add more contact details if needed, e.g., phone */}
                 </CardContent>
               </Card>
 
@@ -111,16 +110,6 @@ const ContactSection = () => {
                     <Button variant="outline" size="icon" asChild aria-label="LinkedIn Profile">
                       <Link href="https://www.linkedin.com/in/hardipatel2510/" target="_blank" rel="noopener noreferrer">
                         <Linkedin className="h-5 w-5" />
-                      </Link>
-                    </Button>
-                    <Button variant="outline" size="icon" asChild aria-label="GitHub Profile">
-                      <Link href="#" target="_blank" rel="noopener noreferrer">
-                        <Github className="h-5 w-5" />
-                      </Link>
-                    </Button>
-                    <Button variant="outline" size="icon" asChild aria-label="Twitter Profile">
-                      <Link href="#" target="_blank" rel="noopener noreferrer">
-                        <Twitter className="h-5 w-5" />
                       </Link>
                     </Button>
                   </div>
