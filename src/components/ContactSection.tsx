@@ -7,9 +7,9 @@ import { Label } from '@/components/ui/label';
 import AnimatedSection from './AnimatedSection';
 import { Github, Linkedin, Twitter, Mail, Send } from 'lucide-react';
 import Link from 'next/link';
-import { useFormState, useFormStatus } from 'react-dom';
+import { useActionState, useEffect, useRef } from 'react'; // Changed from react-dom
+import { useFormStatus } from 'react-dom';
 import { submitContactForm, type ContactFormState } from '@/actions/contact';
-import { useEffect, useRef } from 'react';
 import { useToast } from '@/hooks/use-toast';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
@@ -28,7 +28,7 @@ function SubmitButton() {
 }
 
 const ContactSection = () => {
-  const [state, formAction] = useFormState(submitContactForm, initialState);
+  const [state, formAction] = useActionState(submitContactForm, initialState); // Changed to useActionState
   const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
 
