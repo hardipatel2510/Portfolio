@@ -2,14 +2,13 @@
 "use client";
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { Menu, X, Briefcase, User, Palette, Brain, Mail } from 'lucide-react';
+import { Menu, X, Briefcase, User, Brain, Mail } from 'lucide-react'; // Removed Palette
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
 const navLinks = [
   { href: '#about', label: 'About', icon: <User className="h-5 w-5" /> },
   { href: '#projects', label: 'Projects', icon: <Briefcase className="h-5 w-5" /> },
-  { href: '#art', label: 'Art', icon: <Palette className="h-5 w-5" /> },
   { href: '#skills', label: 'Skills', icon: <Brain className="h-5 w-5" /> },
   { href: '#contact', label: 'Contact', icon: <Mail className="h-5 w-5" /> },
 ];
