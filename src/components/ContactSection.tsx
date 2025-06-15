@@ -112,6 +112,11 @@ const ContactSection = () => {
                         <Linkedin className="h-5 w-5" />
                       </Link>
                     </Button>
+                    <Button variant="outline" size="icon" asChild aria-label="GitHub Profile">
+                      <Link href="https://github.com/hardipatel2510" target="_blank" rel="noopener noreferrer">
+                        <Github className="h-5 w-5" />
+                      </Link>
+                    </Button>
                     <Button variant="outline" size="icon" asChild aria-label="Instagram Profile">
                       <Link href="https://www.instagram.com/hardiptl.io/" target="_blank" rel="noopener noreferrer">
                         <Instagram className="h-5 w-5" />
