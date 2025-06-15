@@ -3,7 +3,7 @@
 import { Progress } from '@/components/ui/progress';
 import AnimatedSection from './AnimatedSection';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Code2, Database, TerminalSquare, PencilRuler, Server, Settings2 } from 'lucide-react'; // Example icons
+import { Code2, Database, PencilRuler } from 'lucide-react'; // Removed TerminalSquare, Server, Settings2
 
 interface Skill {
   name: string;
@@ -22,38 +22,24 @@ const skillsData: SkillCategory[] = [
     name: 'Programming Languages',
     icon: <Code2 className="h-6 w-6 text-primary" />,
     skills: [
-      { name: 'JavaScript', proficiency: 90 },
-      { name: 'TypeScript', proficiency: 85 },
-      { name: 'Python', proficiency: 75 },
-      { name: 'Java', proficiency: 70 },
+      { name: 'HTML', proficiency: 40 },
+      { name: 'Java', proficiency: 60 },
+      { name: 'CSS', proficiency: 30 },
+      { name: 'DSA', proficiency: 40 },
     ],
   },
   {
-    name: 'Frameworks & Libraries',
-    icon: <TerminalSquare className="h-6 w-6 text-primary" />,
-    skills: [
-      { name: 'React / Next.js', proficiency: 90 },
-      { name: 'Node.js / Express', proficiency: 80 },
-      { name: 'Spring Boot', proficiency: 65 },
-      { name: 'Tailwind CSS', proficiency: 95 },
-    ],
-  },
-  {
-    name: 'Databases & DevOps',
+    name: 'Databases',
     icon: <Database className="h-6 w-6 text-primary" />,
     skills: [
-      { name: 'MongoDB', proficiency: 75 },
-      { name: 'PostgreSQL', proficiency: 70 },
-      { name: 'Docker', proficiency: 80 },
-      { name: 'Git & GitHub', proficiency: 90 },
+      { name: 'SQL', proficiency: 70 },
     ],
   },
   {
     name: 'Design Tools',
     icon: <PencilRuler className="h-6 w-6 text-primary" />,
     skills: [
-      { name: 'Figma', proficiency: 85 },
-      { name: 'Adobe XD', proficiency: 70 },
+      { name: 'Canva', proficiency: 75 },
     ],
   },
 ];
@@ -66,7 +52,7 @@ const SkillsSection = () => {
           <h2 className="text-3xl md:text-4xl font-headline font-bold text-center mb-12">
             Skills & Tools
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 w-full max-w-4xl">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-4xl justify-center">
             {skillsData.map((category) => (
               <Card key={category.name} className="shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <CardHeader className="flex flex-row items-center space-x-3 pb-4">
