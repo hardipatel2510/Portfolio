@@ -47,10 +47,10 @@ const ProjectsSection = () => {
           <h2 className="text-3xl md:text-4xl font-headline font-bold text-center mb-12">
             Featured Projects
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8"> {/* Adjusted for 2 projects */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 w-full max-w-4xl">
             {projectsData.map((project) => (
               <Card key={project.id} className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="relative h-48 w-full">
+                <div className="relative w-full aspect-square">
                   <Image
                     src={project.imageUrl}
                     alt={project.title}
@@ -61,7 +61,7 @@ const ProjectsSection = () => {
                 </div>
                 <CardHeader>
                   <CardTitle className="font-headline text-2xl">{project.title}</CardTitle>
-                  <CardDescription className="font-body text-muted-foreground pt-1 min-h-[6rem]"> {/* Adjusted min-height for description */}
+                  <CardDescription className="font-body text-muted-foreground pt-1 min-h-[6rem]">
                     {project.description}
                   </CardDescription>
                 </CardHeader>
