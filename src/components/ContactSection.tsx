@@ -96,7 +96,7 @@ const ContactSection = () => {
                   </p>
                   <div className="flex items-center space-x-3">
                     <Mail className="h-5 w-5 text-primary" />
-                    <a href="mailto:contact@example.com" className="font-body hover:text-primary transition-colors">contact@example.com</a>
+                    <a href="mailto:hardi.2510p@gmail.com" className="font-body hover:text-primary transition-colors">hardi.2510p@gmail.com</a>
                   </div>
                   {/* Add more contact details if needed, e.g., phone */}
                 </CardContent>
