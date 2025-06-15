@@ -2,7 +2,7 @@
 "use client";
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { Menu, X, Briefcase, User, Brain, Mail } from 'lucide-react';
+import { Menu, X, Briefcase, User, Brain, Mail, Sun, Moon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
@@ -16,6 +16,33 @@ const navLinks = [
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    // Set initial theme based on localStorage or system preference
+    const storedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (storedTheme) {
+      setTheme(storedTheme);
+    } else if (systemPrefersDark) {
+      setTheme('dark');
+    } else {
+      setTheme('light'); // Default to light if no preference
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return; // Wait until mounted to avoid hydration issues with documentElement
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+  }, [theme, mounted]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,6 +51,10 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const toggleTheme = () => {
+    setTheme(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'));
+  };
 
   const NavLinkItem: React.FC<{ href: string; label: string; icon: React.ReactNode; onClick?: () => void }> = ({ href, label, icon, onClick }) => (
     <Link
@@ -54,6 +85,10 @@ const Navbar = () => {
             {navLinks.map((link) => (
               <NavLinkItem key={link.href} {...link} />
             ))}
+            <Button variant="ghost" size="icon" onClick={toggleTheme} aria-label="Toggle theme">
+              {mounted && (theme === 'light' ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />)}
+              {!mounted && <div className="h-5 w-5" /> /* Placeholder to prevent layout shift */}
+            </Button>
           </div>
 
           {/* Mobile Navigation Trigger */}
@@ -78,6 +113,19 @@ const Navbar = () => {
                     {navLinks.map((link) => (
                       <NavLinkItem key={link.href} {...link} onClick={() => setMobileMenuOpen(false)} />
                     ))}
+                     <Button
+                        variant="ghost"
+                        className="w-full justify-start gap-2 px-3 py-2 text-sm font-medium"
+                        onClick={() => {
+                          toggleTheme();
+                          // setMobileMenuOpen(false); // Keep menu open or close, based on preference
+                        }}
+                        aria-label="Toggle theme"
+                      >
+                        {mounted && (theme === 'light' ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />)}
+                        {!mounted && <div className="h-5 w-5 inline-block" /> /* Placeholder */}
+                        <span className="font-headline">Toggle Theme</span>
+                      </Button>
                   </nav>
                 </div>
               </SheetContent>
