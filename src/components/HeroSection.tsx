@@ -3,7 +3,7 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import AnimatedSection from './AnimatedSection';
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, Download } from 'lucide-react';
 
 const HeroSection = () => {
   return (
@@ -21,9 +21,15 @@ const HeroSection = () => {
           <p className="text-lg md:text-xl font-body max-w-2xl mb-10 text-muted-foreground">
             Welcome to my personal portfolio. Explore my journey through code, design, and creativity.
           </p>
-          <div className="space-x-4">
+          <div className="flex flex-wrap justify-center gap-4">
             <Button asChild size="lg" className="font-headline shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
               <Link href="#projects">View My Work</Link>
+            </Button>
+            <Button asChild variant="outline" size="lg" className="font-headline shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+              <Link href="/cv.pdf" target="_blank" download="Hardi_Patel_CV.pdf">
+                <Download className="mr-2 h-5 w-5" />
+                Download CV
+              </Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="font-headline shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
               <Link href="#contact">Get In Touch</Link>
