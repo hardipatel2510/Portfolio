@@ -13,10 +13,10 @@ const Footer = () => {
     <footer className="py-8 bg-muted text-muted-foreground text-center">
       <div className="container mx-auto px-4">
         <p className="font-body text-sm">
-          &copy; {currentYear} Zenithfolio. All rights reserved.
+          &copy; {currentYear} Hardi Patel. All rights reserved.
         </p>
         <p className="font-body text-xs mt-1">
-          Designed and Developed with <span role="img" aria-label="love">❤️</span>.
+          Designed and Developed with <span role="img" aria-label="love">❤️</span> in India.
         </p>
       </div>
     </footer>
