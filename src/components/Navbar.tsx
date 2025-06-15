@@ -45,7 +45,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          <Link href="/" className="text-2xl font-headline font-bold text-primary">
+          <Link href="/#hero" className="text-2xl font-headline font-bold text-primary">
             Hardi Patel
           </Link>
 
@@ -67,7 +67,7 @@ const Navbar = () => {
               <SheetContent side="right" className="w-[280px] p-0 bg-background">
                 <div className="flex flex-col h-full">
                   <div className="flex items-center justify-between p-4 border-b">
-                    <Link href="/" className="text-xl font-headline font-bold text-primary" onClick={() => setMobileMenuOpen(false)}>
+                    <Link href="/#hero" className="text-xl font-headline font-bold text-primary" onClick={() => setMobileMenuOpen(false)}>
                       Hardi Patel
                     </Link>
                     <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(false)} aria-label="Close navigation menu">
