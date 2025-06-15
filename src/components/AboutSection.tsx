@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import AnimatedSection from './AnimatedSection';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Briefcase, GraduationCap, Heart } from 'lucide-react';
+import { Briefcase, GraduationCap, Heart, Users, Zap, ArrowUp } from 'lucide-react';
 
 const AboutSection = () => {
   return (
@@ -28,27 +28,27 @@ const AboutSection = () => {
 
             <div className="md:col-span-2 space-y-6">
               <p className="text-lg font-body text-muted-foreground leading-relaxed">
-                Hello! I'm a passionate and creative individual with a strong background in software development and a keen eye for design. My journey in the tech world has been driven by a constant curiosity and a desire to build meaningful and impactful digital solutions.
+                I’m a computer engineering student with a curious mindset and a willingness to explore new opportunities. While I’m still discovering my path, I enjoy being part of collaborative environments where I can learn, contribute, and grow. I believe in showing up, asking questions, and doing my best — no matter the challenge.
               </p>
               <p className="text-lg font-body text-muted-foreground leading-relaxed">
-                I thrive in collaborative environments and enjoy tackling complex challenges. Whether it's crafting elegant code, designing intuitive user interfaces, or exploring new artistic avenues, I approach every task with dedication and enthusiasm.
+                I’m someone who values consistency, teamwork, and self-improvement. I may not have everything figured out yet, but I’m committed to learning, trying new things, and becoming the best version of myself — one step at a time.
               </p>
               
-              <div className="grid sm:grid-cols-2 gap-6 pt-4">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-4">
                 <InfoCard
-                  icon={<Briefcase className="h-8 w-8 text-primary" />}
-                  title="Experience"
-                  description="Years of hands-on experience in full-stack development, working on diverse projects from concept to deployment."
+                  icon={<Zap className="h-8 w-8 text-primary" />}
+                  title="Curiosity"
+                  description="Eager to explore new technologies and solve challenging problems."
                 />
                 <InfoCard
-                  icon={<GraduationCap className="h-8 w-8 text-primary" />}
-                  title="Education"
-                  description="Solid academic foundation in Computer Science, coupled with continuous learning and skill enhancement."
+                  icon={<Users className="h-8 w-8 text-primary" />}
+                  title="Collaboration"
+                  description="Thrive in team settings, valuing shared learning and growth."
                 />
                 <InfoCard
-                  icon={<Heart className="h-8 w-8 text-primary" />}
-                  title="Passion"
-                  description="Driven by a love for innovation, problem-solving, and creating aesthetically pleasing and functional products."
+                  icon={<ArrowUp className="h-8 w-8 text-primary" />}
+                  title="Self-Improvement"
+                  description="Dedicated to continuous learning and personal development."
                 />
               </div>
             </div>
