@@ -17,7 +17,6 @@ const HeroSection = () => {
         <AnimatedSection className="flex flex-col items-center" initialY={20} staggerDelay={200}>
           <h1 className="text-5xl md:text-7xl font-headline font-bold mb-6 leading-tight">
             <span className="block">Hi, I'm <span className="text-primary">Hardi Patel</span></span>
-            <span className="block">Crafting Digital Experiences</span>
           </h1>
           <p className="text-lg md:text-xl font-body max-w-2xl mb-10 text-muted-foreground">
             Welcome to my personal portfolio. Explore my journey through code, design, and creativity.
