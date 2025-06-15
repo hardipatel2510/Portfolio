@@ -46,11 +46,7 @@ const ProjectsSection = () => {
                 <CardHeader>
                   <div className="flex items-center space-x-2">
                     <CardTitle className="font-headline text-2xl">{project.title}</CardTitle>
-                    <span
-                      className="h-3 w-3 rounded-full bg-primary animate-blink"
-                      title="Work in Progress"
-                      aria-label="Work in Progress"
-                    />
+                    <span className="text-xs text-muted-foreground font-code">(In Progress)</span>
                   </div>
                   <CardDescription className="font-body text-muted-foreground pt-1 min-h-[6rem]">
                     {project.description}
