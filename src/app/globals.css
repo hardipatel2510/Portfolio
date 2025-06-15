@@ -75,9 +75,9 @@ textarea {
     --radius: 0.5rem;
     --sidebar-background: 270 50% 99%; /* Very light lilac for sidebar */
     --sidebar-foreground: 270 10% 30%;
-    --sidebar-primary: 206 90% 65%; 
+    --sidebar-primary: 206 90% 65%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 270 40% 94%; 
+    --sidebar-accent: 270 40% 94%;
     --sidebar-accent-foreground: 270 10% 20%;
     --sidebar-border: 270 30% 90%;
     --sidebar-ring: 206 90% 65%;
@@ -90,15 +90,15 @@ textarea {
     --popover: 0 0% 7%;
     --popover-foreground: 207 10% 85%;
     --primary: 206 90% 55%; /* Slightly desaturated sky blue for dark mode */
-    --primary-foreground: 0 0% 100%; 
+    --primary-foreground: 0 0% 100%;
     --secondary: 0 0% 12%; /* Dark gray */
-    --secondary-foreground: 207 10% 70%; 
+    --secondary-foreground: 207 10% 70%;
     --muted: 0 0% 10%; /* Darker gray for muted elements */
-    --muted-foreground: 207 10% 55%; 
+    --muted-foreground: 207 10% 55%;
     --accent: 265 60% 60%; /* Slightly desaturated violet for dark mode */
-    --accent-foreground: 0 0% 100%; 
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 70% 55%; /* Brighter red for contrast on black */
-    --destructive-foreground: 0 0% 100%; 
+    --destructive-foreground: 0 0% 100%;
     --border: 0 0% 15%; /* Subtle gray border */
     --input: 0 0% 15%; /* Matching input border/bg */
     --ring: 206 90% 55%; /* Ring matches primary */
@@ -107,11 +107,11 @@ textarea {
     --chart-3: 270 50% 55%;
     --chart-4: 210 70% 60%;
     --chart-5: 250 50% 70%;
-    --sidebar-background: 0 0% 3%; 
+    --sidebar-background: 0 0% 3%;
     --sidebar-foreground: 207 10% 80%;
-    --sidebar-primary: 206 90% 55%; 
+    --sidebar-primary: 206 90% 55%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 10%; 
+    --sidebar-accent: 0 0% 10%;
     --sidebar-accent-foreground: 207 10% 80%;
     --sidebar-border: 0 0% 10%;
     --sidebar-ring: 206 90% 55%;
