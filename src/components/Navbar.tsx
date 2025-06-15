@@ -60,7 +60,7 @@ const Navbar = () => {
     <Link
       href={href}
       onClick={onClick}
-      className="flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition-colors hover:bg-primary/10 hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary"
+      className="flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 ease-out hover:bg-primary/10 hover:text-primary hover:scale-110 focus:outline-none focus:ring-2 focus:ring-primary transform"
       aria-label={`Go to ${label} section`}
     >
       {icon}
@@ -76,7 +76,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          <Link href="/#hero" className="text-2xl font-headline font-bold text-primary">
+          <Link href="/#hero" className="text-2xl font-headline font-bold text-primary inline-block transform hover:scale-105 transition-transform duration-200 ease-out">
             Hardi Patel
           </Link>
 
@@ -85,7 +85,7 @@ const Navbar = () => {
             {navLinks.map((link) => (
               <NavLinkItem key={link.href} {...link} />
             ))}
-            <Button variant="ghost" size="icon" onClick={toggleTheme} aria-label="Toggle theme">
+            <Button variant="ghost" size="icon" onClick={toggleTheme} aria-label="Toggle theme" className="transform hover:scale-110 transition-all duration-200 ease-out">
               {mounted && (theme === 'light' ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />)}
               {!mounted && <div className="h-5 w-5" /> /* Placeholder to prevent layout shift */}
             </Button>
@@ -95,17 +95,17 @@ const Navbar = () => {
           <div className="md:hidden">
             <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" aria-label="Open navigation menu">
+                <Button variant="ghost" size="icon" aria-label="Open navigation menu" className="transform hover:scale-110 transition-transform duration-200 ease-out">
                   <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-[280px] p-0 bg-background">
                 <div className="flex flex-col h-full">
                   <div className="flex items-center justify-between p-4 border-b">
-                    <Link href="/#hero" className="text-xl font-headline font-bold text-primary" onClick={() => setMobileMenuOpen(false)}>
+                    <Link href="/#hero" className="text-xl font-headline font-bold text-primary inline-block transform hover:scale-105 transition-transform duration-200 ease-out" onClick={() => setMobileMenuOpen(false)}>
                       Hardi Patel
                     </Link>
-                    <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(false)} aria-label="Close navigation menu">
+                    <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(false)} aria-label="Close navigation menu" className="transform hover:scale-110 transition-transform duration-200 ease-out">
                       <X className="h-6 w-6" />
                     </Button>
                   </div>
@@ -115,7 +115,7 @@ const Navbar = () => {
                     ))}
                      <Button
                         variant="ghost"
-                        className="w-full justify-start gap-2 px-3 py-2 text-sm font-medium"
+                        className="w-full justify-start gap-2 px-3 py-2 text-sm font-medium hover:bg-primary/10 hover:text-primary transform hover:scale-105 transition-all duration-200 ease-out"
                         onClick={() => {
                           toggleTheme();
                           // setMobileMenuOpen(false); // Keep menu open or close, based on preference
