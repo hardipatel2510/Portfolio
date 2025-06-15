@@ -8,10 +8,12 @@ interface AnimatedSectionProps {
   children: ReactNode;
   className?: string;
   delay?: number;
-  duration?: number;
+  duration?: number; // This will be the base duration, we'll modify it for enter/exit
   staggerDelay?: number;
   initialY?: number;
   exitY?: number; 
+  initialScale?: number;
+  exitScale?: number;
   threshold?: number;
   animateOnce?: boolean; // Default to false: animate in and out
 }
@@ -20,15 +22,19 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
   children,
   className,
   delay = 0,
-  duration = 600,
+  duration = 800, // Default entrance duration
   staggerDelay = 150,
   initialY = 30,
   exitY,
+  initialScale = 0.98,
+  exitScale = 0.98,
   threshold = 0.1,
   animateOnce = false, 
 }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const finalExitY = exitY !== undefined ? exitY : initialY;
+  const entranceDuration = duration;
+  const exitDuration = duration / 2;
 
   useEffect(() => {
     const currentRef = sectionRef.current;
@@ -37,9 +43,7 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
     const elementsToAnimate = Array.from(currentRef.children) as HTMLElement[];
     if (elementsToAnimate.length === 0) return;
 
-    // Set initial hidden state. This is for the very first appearance.
-    // If !animateOnce, elements will be animated back to this state when they scroll out.
-    anime.set(elementsToAnimate, { opacity: 0, translateY: initialY });
+    anime.set(elementsToAnimate, { opacity: 0, translateY: initialY, scale: initialScale });
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -47,28 +51,30 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
           if (elementsToAnimate.length === 0) return;
 
           if (entry.isIntersecting) {
-            anime.remove(elementsToAnimate); // Stop any ongoing animations
+            anime.remove(elementsToAnimate); 
             anime({
               targets: elementsToAnimate,
               opacity: [0, 1],
               translateY: [initialY, 0],
+              scale: [initialScale, 1],
               delay: anime.stagger(staggerDelay, { start: delay }),
-              duration,
-              easing: 'easeOutExpo',
+              duration: entranceDuration,
+              easing: 'easeInOutSine',
             });
             if (animateOnce) {
               observer.unobserve(currentRef);
             }
           } else {
-            if (!animateOnce) { // Only animate out if not animateOnce
-              anime.remove(elementsToAnimate); // Stop any ongoing animations
+            if (!animateOnce) { 
+              anime.remove(elementsToAnimate); 
               anime({
                 targets: elementsToAnimate,
                 opacity: [1, 0],
                 translateY: [0, finalExitY],
-                delay: 0, // No stagger on exit
-                duration: duration / 2, // Faster exit
-                easing: 'easeInExpo',
+                scale: [1, exitScale],
+                delay: 0, 
+                duration: exitDuration,
+                easing: 'easeInOutSine',
               });
             }
           }
@@ -83,13 +89,11 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
       if (currentRef) {
         observer.unobserve(currentRef);
       }
-      // Clean up anime instances on unmount if elementsToAnimate is not empty
       if (elementsToAnimate.length > 0) {
         anime.remove(elementsToAnimate);
       }
     };
-  // Re-run effect if these specific props change. Children content change doesn't re-trigger.
-  }, [delay, duration, staggerDelay, initialY, finalExitY, threshold, animateOnce]); 
+  }, [delay, entranceDuration, exitDuration, staggerDelay, initialY, finalExitY, initialScale, exitScale, threshold, animateOnce, children]); // Added children to re-evaluate if content changes dynamically
 
   return (
     <div ref={sectionRef} className={cn(className)}>
