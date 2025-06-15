@@ -21,31 +21,21 @@ interface Project {
 const projectsData: Project[] = [
   {
     id: '1',
-    title: 'E-commerce Platform',
-    description: 'A full-featured e-commerce website with product listings, cart functionality, and user accounts. Built with Next.js, Tailwind CSS, and Stripe integration.',
+    title: 'Bank Link Integrated Service',
+    description: 'A smart, data-driven web solution designed to reduce unnecessary bank visits by helping users pre-book appointments and receive precise guidance on required documents, just built the frontend using the HTML and tailwind css.',
     imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'e-commerce website',
-    tags: ['Next.js', 'TypeScript', 'Stripe', 'Tailwind CSS'],
-    liveLink: '#',
-    githubLink: '#',
+    imageHint: 'web application banking',
+    tags: ['HTML', 'Tailwind CSS', 'Frontend'],
+    githubLink: 'https://github.com/simitmodi/Bank-Link-Integrated-Services',
   },
   {
     id: '2',
-    title: 'Portfolio CMS',
-    description: 'A custom content management system for creative professionals to manage their portfolios. Features a drag-and-drop interface and AI-powered content suggestions.',
+    title: 'To-Do list',
+    description: 'Developed a robust, lightweight terminal-based To-Do List application using core Java, designed to optimize personal task management through a minimalist menu driven solution.',
     imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'cms dashboard',
-    tags: ['React', 'Node.js', 'MongoDB', 'GraphQL'],
-    githubLink: '#',
-  },
-  {
-    id: '3',
-    title: 'Interactive Data Visualization Tool',
-    description: 'A web application for visualizing complex datasets with interactive charts and graphs. Leverages D3.js for powerful and customizable visualizations.',
-    imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'data charts',
-    tags: ['D3.js', 'JavaScript', 'Python', 'Flask'],
-    liveLink: '#',
+    imageHint: 'terminal application java',
+    tags: ['Java', 'CLI', 'Task Management'],
+    githubLink: 'https://github.com/simitmodi/ToDoList',
   },
 ];
 
@@ -57,7 +47,7 @@ const ProjectsSection = () => {
           <h2 className="text-3xl md:text-4xl font-headline font-bold text-center mb-12">
             Featured Projects
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8"> {/* Adjusted for 2 projects */}
             {projectsData.map((project) => (
               <Card key={project.id} className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <div className="relative h-48 w-full">
@@ -71,7 +61,7 @@ const ProjectsSection = () => {
                 </div>
                 <CardHeader>
                   <CardTitle className="font-headline text-2xl">{project.title}</CardTitle>
-                  <CardDescription className="font-body text-muted-foreground pt-1 h-20 overflow-hidden"> {/* Fixed height for description */}
+                  <CardDescription className="font-body text-muted-foreground pt-1 min-h-[6rem]"> {/* Adjusted min-height for description */}
                     {project.description}
                   </CardDescription>
                 </CardHeader>
