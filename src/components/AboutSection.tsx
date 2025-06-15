@@ -66,7 +66,7 @@ interface InfoCardProps {
 }
 
 const InfoCard: React.FC<InfoCardProps> = ({ icon, title, description }) => (
-  <Card className="bg-background shadow-md hover:shadow-lg transition-all duration-300 ease-out cursor-pointer transform hover:scale-105">
+  <Card className="bg-background shadow-md hover:shadow-lg transition-all duration-300 ease-out cursor-none transform hover:scale-105">
     <CardHeader className="flex flex-row items-center gap-4 pb-2">
       {icon}
       <CardTitle className="font-headline text-xl">{title}</CardTitle>
