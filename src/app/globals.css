@@ -4,12 +4,19 @@
 
 html {
   scroll-behavior: smooth;
+  scrollbar-width: none; /* For Firefox */
+}
+
+/* For Webkit browsers - Hide scrollbars globally */
+::-webkit-scrollbar {
+  display: none;
 }
 
 body {
   font-family: 'Source Code Pro', monospace; /* Default to body font */
   /* Custom dot cursor, fixed lilac color */
   cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'><circle cx='8' cy='8' r='4' fill='hsl(275, 65%, 70%)'/></svg>") 8 8, auto;
+  -ms-overflow-style: none;  /* IE and Edge */
 }
 
 /* Override for specific interactive elements to use no cursor or standard cursors */
@@ -41,73 +48,73 @@ textarea {
 
 @layer base {
   :root {
-    --background: 270 60% 97%; /* Very pale lilac */
+    --background: 207 19% 92%; /* Light, desaturated blue-gray */
     --foreground: 270 10% 20%; /* Dark grayish purple for text */
     --card: 0 0% 100%; /* White card */
     --card-foreground: 270 10% 20%;
     --popover: 0 0% 100%;
     --popover-foreground: 270 10% 20%;
-    --primary: 275 65% 70%; /* Soft lilac/lavender */
+    --primary: 206 90% 65%; /* Saturated sky blue (#42A5F5) */
     --primary-foreground: 0 0% 100%; /* White text on primary */
     --secondary: 270 40% 94%; /* Paler lilac for secondary */
     --secondary-foreground: 270 10% 30%;
     --muted: 270 30% 92%; /* Even paler lilac for muted */
     --muted-foreground: 270 10% 45%;
-    --accent: 330 70% 75%; /* Soft pink */
+    --accent: 265 60% 68%; /* Deep shade of violet (#7E57C2) */
     --accent-foreground: 0 0% 100%; /* White text on accent */
     --destructive: 0 70% 65%; /* Adjusted destructive for new theme */
     --destructive-foreground: 0 0% 100%;
     --border: 270 30% 88%; /* Light lilac border */
     --input: 270 30% 88%; /* Light lilac input */
-    --ring: 275 65% 70%; /* Ring matches primary */
-    --chart-1: 275 65% 70%; /* Primary lilac for chart */
-    --chart-2: 330 70% 75%; /* Accent pink for chart */
-    --chart-3: 260 50% 75%; /* Muted purple for chart */
-    --chart-4: 300 60% 80%; /* Light pink/magenta for chart */
-    --chart-5: 240 50% 80%; /* Soft blue/purple for chart */
+    --ring: 206 90% 65%; /* Ring matches primary */
+    --chart-1: 206 90% 65%; /* Primary blue for chart */
+    --chart-2: 265 60% 68%; /* Accent violet for chart */
+    --chart-3: 270 50% 75%; /* Muted purple for chart */
+    --chart-4: 210 70% 70%; /* Lighter blue */
+    --chart-5: 250 50% 80%; /* Soft blue/purple for chart */
     --radius: 0.5rem;
     --sidebar-background: 270 50% 99%; /* Very light lilac for sidebar */
     --sidebar-foreground: 270 10% 30%;
-    --sidebar-primary: 275 65% 70%; /* Primary lilac */
+    --sidebar-primary: 206 90% 65%; 
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 270 40% 94%; /* Paler lilac for sidebar accent */
+    --sidebar-accent: 270 40% 94%; 
     --sidebar-accent-foreground: 270 10% 20%;
     --sidebar-border: 270 30% 90%;
-    --sidebar-ring: 275 65% 70%;
+    --sidebar-ring: 206 90% 65%;
   }
   .dark {
     --background: 0 0% 0%; /* Pure black */
-    --foreground: 270 20% 95%; /* Very light grayish purple text */
+    --foreground: 207 10% 85%; /* Light gray-blue text */
     --card: 0 0% 7%; /* Very dark gray, slightly off-black */
-    --card-foreground: 270 20% 95%;
+    --card-foreground: 207 10% 85%;
     --popover: 0 0% 7%;
-    --popover-foreground: 270 20% 95%;
-    --primary: 275 65% 70%; /* Lilac */
-    --primary-foreground: 270 10% 10%; /* Dark text on primary for contrast */
+    --popover-foreground: 207 10% 85%;
+    --primary: 206 90% 55%; /* Slightly desaturated sky blue for dark mode */
+    --primary-foreground: 0 0% 100%; 
     --secondary: 0 0% 12%; /* Dark gray */
-    --secondary-foreground: 270 20% 80%; /* Slightly dimmer light text */
+    --secondary-foreground: 207 10% 70%; 
     --muted: 0 0% 10%; /* Darker gray for muted elements */
-    --muted-foreground: 270 15% 60%; /* More subdued light text */
-    --accent: 330 70% 75%; /* Soft Pink */
-    --accent-foreground: 270 10% 10%; /* Dark text on accent for contrast */
+    --muted-foreground: 207 10% 55%; 
+    --accent: 265 60% 60%; /* Slightly desaturated violet for dark mode */
+    --accent-foreground: 0 0% 100%; 
     --destructive: 0 70% 55%; /* Brighter red for contrast on black */
-    --destructive-foreground: 0 0% 100%; /* White text on destructive */
+    --destructive-foreground: 0 0% 100%; 
     --border: 0 0% 15%; /* Subtle gray border */
     --input: 0 0% 15%; /* Matching input border/bg */
-    --ring: 275 65% 70%; /* Lilac ring */
-    --chart-1: 275 65% 70%;
-    --chart-2: 330 70% 75%;
-    --chart-3: 260 50% 65%;
-    --chart-4: 300 60% 70%;
-    --chart-5: 240 50% 70%;
-    --sidebar-background: 0 0% 3%; /* Almost black, very subtle diff from main bg */
-    --sidebar-foreground: 270 20% 90%;
-    --sidebar-primary: 275 65% 70%; 
-    --sidebar-primary-foreground: 270 10% 10%;
-    --sidebar-accent: 0 0% 10%; /* Dark gray for sidebar accents */
-    --sidebar-accent-foreground: 270 20% 90%;
+    --ring: 206 90% 55%; /* Ring matches primary */
+    --chart-1: 206 90% 55%;
+    --chart-2: 265 60% 60%;
+    --chart-3: 270 50% 55%;
+    --chart-4: 210 70% 60%;
+    --chart-5: 250 50% 70%;
+    --sidebar-background: 0 0% 3%; 
+    --sidebar-foreground: 207 10% 80%;
+    --sidebar-primary: 206 90% 55%; 
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 10%; 
+    --sidebar-accent-foreground: 207 10% 80%;
     --sidebar-border: 0 0% 10%;
-    --sidebar-ring: 275 65% 70%;
+    --sidebar-ring: 206 90% 55%;
   }
 }
 
