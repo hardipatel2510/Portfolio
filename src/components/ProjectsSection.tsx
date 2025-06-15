@@ -1,6 +1,5 @@
 // components/ProjectsSection.tsx
 "use client";
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import AnimatedSection from './AnimatedSection';
@@ -11,8 +10,6 @@ interface Project {
   id: string;
   title: string;
   description: string;
-  imageUrl: string;
-  imageHint: string;
   tags: string[];
   liveLink?: string;
   githubLink?: string;
@@ -23,8 +20,6 @@ const projectsData: Project[] = [
     id: '1',
     title: 'Bank Link Integrated Service',
     description: 'A smart, data-driven web solution designed to reduce unnecessary bank visits by helping users pre-book appointments and receive precise guidance on required documents, just built the frontend using the HTML and tailwind css.',
-    imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'web application banking',
     tags: ['HTML', 'Tailwind CSS', 'Frontend'],
     githubLink: 'https://github.com/simitmodi/Bank-Link-Integrated-Services',
   },
@@ -32,8 +27,6 @@ const projectsData: Project[] = [
     id: '2',
     title: 'To-Do list',
     description: 'Developed a robust, lightweight terminal-based To-Do List application using core Java, designed to optimize personal task management through a minimalist menu driven solution.',
-    imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'terminal application java',
     tags: ['Java', 'CLI', 'Task Management'],
     githubLink: 'https://github.com/simitmodi/ToDoList',
   },
@@ -50,15 +43,7 @@ const ProjectsSection = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 w-full max-w-4xl">
             {projectsData.map((project) => (
               <Card key={project.id} className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="relative w-full aspect-square">
-                  <Image
-                    src={project.imageUrl}
-                    alt={project.title}
-                    layout="fill"
-                    objectFit="cover"
-                    data-ai-hint={project.imageHint}
-                  />
-                </div>
+                {/* Image removed from here */}
                 <CardHeader>
                   <CardTitle className="font-headline text-2xl">{project.title}</CardTitle>
                   <CardDescription className="font-body text-muted-foreground pt-1 min-h-[6rem]">
