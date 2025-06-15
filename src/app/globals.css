@@ -8,7 +8,35 @@ html {
 
 body {
   font-family: 'PT Sans', sans-serif; /* Default to body font */
+  /* Custom dot cursor, adapts to text color (currentColor) */
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'><circle cx='4' cy='4' r='2' fill='currentColor'/></svg>") 4 4, auto;
 }
+
+/* Override for specific interactive elements to use standard cursors */
+a,
+button,
+[role="button"],
+summary, /* for <details> summary */
+select,
+input[type="checkbox"],
+input[type="radio"],
+input[type="submit"],
+input[type="reset"],
+label[for] /* labels associated with inputs, if clickable */ {
+  cursor: pointer;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="url"],
+input[type="tel"],
+input[type="number"],
+textarea {
+  cursor: text;
+}
+
 
 @layer base {
   :root {
@@ -88,5 +116,6 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+    /* The global cursor is set above and will use currentColor from text-foreground */
   }
 }
