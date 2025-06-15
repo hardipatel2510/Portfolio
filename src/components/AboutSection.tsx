@@ -2,6 +2,7 @@
 "use client";
 import Image from 'next/image';
 import AnimatedSection from './AnimatedSection';
+import TypewriterHeading from './TypewriterHeading';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Briefcase, GraduationCap, Heart, Users, Zap, ArrowUp } from 'lucide-react';
 
@@ -10,9 +11,10 @@ const AboutSection = () => {
     <section id="about" className="py-16 md:py-24 bg-background text-foreground">
       <div className="container mx-auto px-4">
         <AnimatedSection className="flex flex-col items-center">
-          <h2 className="text-3xl md:text-4xl font-headline font-bold text-center mb-12">
-            About Me
-          </h2>
+          <TypewriterHeading 
+            text="About Me"
+            className="text-3xl md:text-4xl font-headline font-bold text-center mb-12" 
+          />
           
           <div className="grid md:grid-cols-3 gap-8 items-start">
             <div className="md:col-span-1 flex justify-center">

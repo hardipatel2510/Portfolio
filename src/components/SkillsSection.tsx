@@ -2,6 +2,7 @@
 "use client";
 import { Progress } from '@/components/ui/progress';
 import AnimatedSection from './AnimatedSection';
+import TypewriterHeading from './TypewriterHeading';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Code2, Database, PencilRuler } from 'lucide-react';
 
@@ -49,9 +50,10 @@ const SkillsSection = () => {
     <section id="skills" className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
         <AnimatedSection className="flex flex-col items-center">
-          <h2 className="text-3xl md:text-4xl font-headline font-bold text-center mb-12">
-            Skills & Tools
-          </h2>
+          <TypewriterHeading 
+            text="Skills & Tools"
+            className="text-3xl md:text-4xl font-headline font-bold text-center mb-12" 
+          />
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-4xl justify-center">
             {skillsData.map((category) => (
               <Card key={category.name} className="shadow-lg hover:shadow-xl transition-all duration-300 ease-out cursor-none transform hover:scale-105">

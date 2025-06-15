@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import AnimatedSection from './AnimatedSection';
+import TypewriterHeading from './TypewriterHeading';
 import { Github, Linkedin, Mail, Send, Instagram } from 'lucide-react';
 import Link from 'next/link';
 import { useActionState, useEffect, useRef } from 'react'; 
@@ -49,9 +50,10 @@ const ContactSection = () => {
     <section id="contact" className="py-16 md:py-24 bg-background text-foreground">
       <div className="container mx-auto px-4">
         <AnimatedSection className="flex flex-col items-center">
-          <h2 className="text-3xl md:text-4xl font-headline font-bold text-center mb-12">
-            Get In Touch
-          </h2>
+          <TypewriterHeading 
+            text="Get In Touch"
+            className="text-3xl md:text-4xl font-headline font-bold text-center mb-12" 
+          />
           <div className="grid lg:grid-cols-2 gap-12 w-full max-w-4xl">
             <Card className="bg-card shadow-lg hover:shadow-xl transition-all duration-300 ease-out cursor-none transform hover:scale-105">
               <CardHeader>

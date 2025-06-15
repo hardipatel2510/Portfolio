@@ -3,6 +3,7 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import AnimatedSection from './AnimatedSection';
+import TypewriterHeading from './TypewriterHeading';
 import { Github, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 
@@ -37,9 +38,10 @@ const ProjectsSection = () => {
     <section id="projects" className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
         <AnimatedSection className="flex flex-col items-center">
-          <h2 className="text-3xl md:text-4xl font-headline font-bold text-center mb-12">
-            Featured Projects
-          </h2>
+          <TypewriterHeading 
+            text="Featured Projects"
+            className="text-3xl md:text-4xl font-headline font-bold text-center mb-12" 
+          />
           <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 w-full max-w-4xl">
             {projectsData.map((project) => (
               <Card key={project.id} className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 ease-out cursor-none transform hover:scale-105">
