@@ -15,8 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning> {/* suppressHydrationWarning for the theme class */}
-      <head>
+    <html lang="en" suppressHydrationWarning><head>
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -49,12 +48,10 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet" />
-      </head>
-      <body className="font-body antialiased">
+      </head><body className="font-body antialiased">
         {children}
         <Toaster />
         <ScrollToTopButton />
-      </body>
-    </html>
+      </body></html>
   );
 }
