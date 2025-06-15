@@ -34,6 +34,18 @@ const AboutSection = () => {
                 I’m someone who values consistency, teamwork, and self-improvement. I may not have everything figured out yet, but I’m committed to learning, trying new things, and becoming the best version of myself — one step at a time.
               </p>
               
+              {/* New Education Section */}
+              <div className="pt-6">
+                <h3 className="text-2xl font-headline font-semibold mb-4 text-foreground">
+                  Education
+                </h3>
+                <InfoCard
+                  icon={<GraduationCap className="h-8 w-8 text-primary" />}
+                  title="B.E. in Computer Engineering"
+                  description="SAL Institute of Technology and Engineering Research (2023 - 2027)"
+                />
+              </div>
+              
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-4">
                 <InfoCard
                   icon={<Zap className="h-8 w-8 text-primary" />}
