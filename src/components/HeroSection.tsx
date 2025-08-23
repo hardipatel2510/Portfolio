@@ -90,7 +90,7 @@ const HeroSection = () => {
             </span>
           </h1>
           <p className="text-lg md:text-xl font-body max-w-2xl mb-10 text-muted-foreground">
-            Welcome to my personal portfolio. Explore my journey through code, design, and creativity.
+            Passionate Computer Engineering student dedicated to crafting efficient, user-centric applications. Ready to leverage skills in Java and DSA to innovate and solve real-world problems.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button asChild size="lg" className="font-headline shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
