@@ -5,7 +5,7 @@ import AnimatedSection from './AnimatedSection';
 import TypewriterHeading from './TypewriterHeading';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Briefcase, GraduationCap, Heart, Users, Zap, ArrowUp } from 'lucide-react';
-import profilePic from '@/lib/Photo.jpg';
+import profilePic from '@/lib/Photo.png';
 
 const AboutSection = () => {
   return (
