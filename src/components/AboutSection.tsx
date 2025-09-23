@@ -5,6 +5,7 @@ import AnimatedSection from './AnimatedSection';
 import TypewriterHeading from './TypewriterHeading';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Briefcase, GraduationCap, Heart, Users, Zap, ArrowUp } from 'lucide-react';
+import profilePic from '@/lib/Photo.jpg';
 
 const AboutSection = () => {
   return (
@@ -19,7 +20,7 @@ const AboutSection = () => {
           <div className="grid md:grid-cols-3 gap-8 items-start">
             <div className="md:col-span-1 flex justify-center">
               <Image
-                src="https://placehold.co/250x250.png"
+                src={profilePic}
                 alt="Profile Picture"
                 width={250} 
                 height={250}
