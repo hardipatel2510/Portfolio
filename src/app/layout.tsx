@@ -5,7 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import ScrollToTopButton from '@/components/ScrollToTopButton';
 
 export const metadata: Metadata = {
-  title: 'Zenithfolio - Portfolio',
+  title: 'Hardi Patel - Portfolio',
   description: 'A personal portfolio showcasing projects, art, and skills.',
 };
 
