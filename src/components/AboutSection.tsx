@@ -37,9 +37,6 @@ const AboutSection = () => {
             </div>
 
             <div className="md:col-span-2 space-y-6">
-              <h2 className="text-2xl md:text-3xl font-headline font-semibold text-primary mb-2">
-                {personalInfo.title}
-              </h2>
               {personalInfo.bio.map((paragraph, index) => (
                 <p key={index} className="text-lg font-body text-muted-foreground leading-relaxed">
                   {paragraph}

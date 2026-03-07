@@ -6,7 +6,6 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import AnimatedSection from './AnimatedSection';
 import { ArrowDown, Download } from 'lucide-react';
-import { cvData } from '@/data/cvData';
 
 const HeroSection = () => {
   const textRef = useRef<SVGTextElement>(null);
@@ -20,9 +19,7 @@ const HeroSection = () => {
       // Ensure styles are applied and text is measurable
       requestAnimationFrame(() => {
         const length = textElement.getComputedTextLength();
-        const padding = 8; // Extra space for stroke width
-        svgElement.style.width = `${length + padding}px`; // Set SVG width with padding
-        textElement.setAttribute('x', (padding / 2).toString()); // Center text within padded SVG
+        svgElement.style.width = `${length}px`; // Set SVG width dynamically
 
         textElement.style.strokeDasharray = `${length}`;
         textElement.style.strokeDashoffset = `${length}`;
@@ -61,51 +58,46 @@ const HeroSection = () => {
     >
       <div className="relative z-20 container mx-auto px-4">
         <AnimatedSection className="flex flex-col items-center" initialY={20} staggerDelay={200}>
-          <h1 className="text-5xl md:text-7xl font-headline font-bold mb-4 leading-tight">
+          <h1 className="text-5xl md:text-7xl font-headline font-bold mb-6 leading-tight">
             <span className="block">Hi, I'm{' '}
               <svg
                 ref={svgRef}
                 style={{
-                  height: "1.1em", // Slightly taller for stroke
+                  height: "1em", // Match line height
                   display: "inline-block",
-                  verticalAlign: "baseline",
+                  verticalAlign: "bottom", // Align with text baseline
                   overflow: "visible"
                 }}
-                aria-label={cvData.personalInfo.name}
+                aria-label="Hardi Patel"
               >
                 <text
                   ref={textRef}
-                  x="4" // Initial offset for padding
-                  y="0.8em"
-                  className="font-headline font-bold"
+                  x="0"
+                  y="0.85em" // Adjust for typical font baseline; may need fine-tuning per font
+                  className="font-headline font-bold" // Ensured it matches h1 style
                   style={{
-                    fontSize: "1em",
+                    fontSize: "1em", // Inherit font size from h1 parent
                     stroke: "hsl(var(--primary))",
-                    strokeWidth: 2, // Slightly thicker
-                    fill: "transparent",
+                    strokeWidth: 1.5, // Adjusted for better visibility
+                    fill: "transparent", // Initial fill before animation
                     strokeLinecap: "round",
                     strokeLinejoin: "round",
                   }}
                 >
-                  {cvData.personalInfo.name}
+                  Hardi Patel
                 </text>
               </svg>
             </span>
           </h1>
-          <h2 className="text-2xl md:text-3xl font-headline font-semibold text-primary mb-6">
-            {cvData.personalInfo.title}
-          </h2>
-          <div className="text-lg md:text-xl font-body max-w-2xl mb-10 text-muted-foreground space-y-4 text-center">
-            {cvData.personalInfo.bio.map((paragraph, index) => (
-              <p key={index}>{paragraph}</p>
-            ))}
-          </div>
+          <p className="text-lg md:text-xl font-body max-w-2xl mb-10 text-muted-foreground">
+            As a Computer Engineering student, I'm driven to create applications that are not only efficient but also intuitive. With a foundation in Java and DSA, I am ready to build innovative software that solves complex, real-world challenges.
+          </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button asChild size="lg" className="font-headline shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
               <Link href="#projects">View My Work</Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="font-headline shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-              <Link href={cvData.personalInfo.resumeLink} download="Hardi_Patel_CV.docx" target="_blank" rel="noopener noreferrer">
+              <Link href="https://1drv.ms/w/c/ae6ee91ec4884036/EWlGJKBoyEJAvVHekkxRPKIBlOnjZfL2ccIhuzpxpFGfYw?e=8Oc9FB" download="Hardi_Patel_CV.docx" target="_blank" rel="noopener noreferrer">
                 <Download className="mr-2 h-5 w-5" />
                 Download CV
               </Link>
@@ -127,3 +119,4 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
