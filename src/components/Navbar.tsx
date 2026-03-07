@@ -7,11 +7,11 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
 const navLinks = [
-  { href: '#hero', label: 'Home', icon: <Home className="h-5 w-5" /> },
-  { href: '#about', label: 'About', icon: <User className="h-5 w-5" /> },
-  { href: '#projects', label: 'Projects', icon: <Briefcase className="h-5 w-5" /> },
-  { href: '#skills', label: 'Skills', icon: <Brain className="h-5 w-5" /> },
-  { href: '#contact', label: 'Contact', icon: <Mail className="h-5 w-5" /> },
+  { href: '/#hero', label: 'Home', icon: <Home className="h-5 w-5" /> },
+  { href: '/#about', label: 'About', icon: <User className="h-5 w-5" /> },
+  { href: '/#projects', label: 'Projects', icon: <Briefcase className="h-5 w-5" /> },
+  { href: '/cv', label: 'CV', icon: <Brain className="h-5 w-5" /> },
+  { href: '/#contact', label: 'Contact', icon: <Mail className="h-5 w-5" /> },
 ];
 
 const Navbar = () => {
@@ -71,9 +71,8 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
-        isScrolled ? 'bg-background/20 shadow-lg backdrop-blur-md' : 'bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${isScrolled ? 'bg-background/20 shadow-lg backdrop-blur-md' : 'bg-transparent'
+        }`}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
@@ -86,11 +85,11 @@ const Navbar = () => {
             {navLinks.map((link) => (
               <NavLinkItem key={link.href} {...link} />
             ))}
-            <Button 
-              variant="ghost" 
-              size="icon" 
-              onClick={toggleTheme} 
-              aria-label="Toggle theme" 
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleTheme}
+              aria-label="Toggle theme"
               className="transform hover:scale-110 transition-transform duration-200 ease-out relative overflow-hidden"
             >
               {mounted ? (
@@ -99,7 +98,7 @@ const Navbar = () => {
                   <Moon className={`absolute h-5 w-5 transition-all duration-300 ease-in-out ${theme === 'dark' ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 rotate-90 scale-50'}`} />
                 </>
               ) : (
-                <div className="h-5 w-5" /> 
+                <div className="h-5 w-5" />
               )}
             </Button>
           </div>
@@ -126,26 +125,26 @@ const Navbar = () => {
                     {navLinks.map((link) => (
                       <NavLinkItem key={link.href} {...link} onClick={() => setMobileMenuOpen(false)} />
                     ))}
-                     <Button
-                        variant="ghost"
-                        className="w-full justify-start gap-2 px-3 py-2 text-sm font-medium hover:bg-primary/10 hover:text-primary transform hover:scale-105 transition-all duration-200 ease-out"
-                        onClick={() => {
-                          toggleTheme();
-                        }}
-                        aria-label="Toggle theme"
-                      >
-                        <div className="relative h-5 w-5">
-                          {mounted ? (
-                            <>
-                              <Sun className={`h-5 w-5 transition-all duration-300 ease-in-out ${theme === 'light' ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-50'}`} />
-                              <Moon className={`absolute top-0 left-0 h-5 w-5 transition-all duration-300 ease-in-out ${theme === 'dark' ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 rotate-90 scale-50'}`} />
-                            </>
-                          ) : (
-                            <div className="h-5 w-5 inline-block" />
-                          )}
-                        </div>
-                        <span className="font-headline">Toggle Theme</span>
-                      </Button>
+                    <Button
+                      variant="ghost"
+                      className="w-full justify-start gap-2 px-3 py-2 text-sm font-medium hover:bg-primary/10 hover:text-primary transform hover:scale-105 transition-all duration-200 ease-out"
+                      onClick={() => {
+                        toggleTheme();
+                      }}
+                      aria-label="Toggle theme"
+                    >
+                      <div className="relative h-5 w-5">
+                        {mounted ? (
+                          <>
+                            <Sun className={`h-5 w-5 transition-all duration-300 ease-in-out ${theme === 'light' ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-50'}`} />
+                            <Moon className={`absolute top-0 left-0 h-5 w-5 transition-all duration-300 ease-in-out ${theme === 'dark' ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 rotate-90 scale-50'}`} />
+                          </>
+                        ) : (
+                          <div className="h-5 w-5 inline-block" />
+                        )}
+                      </div>
+                      <span className="font-headline">Toggle Theme</span>
+                    </Button>
                   </nav>
                 </div>
               </SheetContent>

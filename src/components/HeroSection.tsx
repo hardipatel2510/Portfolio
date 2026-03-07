@@ -100,7 +100,7 @@ const HeroSection = () => {
               <Link href="#projects">View My Work</Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="font-headline shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-              <Link href="#resume">
+              <Link href="/cv">
                 <Download className="mr-2 h-5 w-5" />
                 View & Download CV
               </Link>

@@ -1,6 +1,5 @@
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
-import ResumeSection from '@/components/ResumeSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
@@ -11,7 +10,6 @@ export default function Home() {
       <Navbar />
       <main className="flex-grow pt-20"> {/* pt-20 to offset fixed navbar height (h-20) */}
         <HeroSection />
-        <ResumeSection />
         <ProjectsSection />
         <ContactSection />
       </main>
