@@ -78,11 +78,16 @@ const ResumeSection = () => {
                                     </div>
                                 </div>
 
-                                {/* Profile Pic Placeholder */}
+                                {/* Profile Pic */}
                                 <div className="relative w-48 h-48 md:w-64 md:h-64 flex-shrink-0">
-                                    <div className="absolute inset-0 bg-gradient-to-br from-primary to-purple-500 rounded-full blur-2xl opacity-20 animate-pulse" />
+                                    <div className="absolute inset-0 bg-primary/20 rounded-2xl blur-2xl animate-pulse" />
                                     <div className="relative w-full h-full rounded-2xl overflow-hidden border-2 border-white/20 bg-white/5 flex items-center justify-center">
-                                        <Users className="w-24 h-24 text-white/50" />
+                                        <Image
+                                            src={profilePic}
+                                            alt="Profile Picture"
+                                            fill
+                                            className="object-cover"
+                                        />
                                     </div>
                                 </div>
                             </div>
