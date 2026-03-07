@@ -1,28 +1,35 @@
-// components/AboutSection.tsx
-"use client";
 import Image from 'next/image';
 import AnimatedSection from './AnimatedSection';
 import TypewriterHeading from './TypewriterHeading';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { cvData } from '@/data/cvData';
 import { Briefcase, GraduationCap, Heart, Users, Zap, ArrowUp } from 'lucide-react';
 import profilePic from '@/lib/Photo.png';
 
+const iconMap = {
+  Zap: Zap,
+  Users: Users,
+  ArrowUp: ArrowUp,
+};
+
 const AboutSection = () => {
+  const { personalInfo, education, coreValues } = cvData;
+
   return (
     <section id="about" className="py-16 md:py-24 bg-background text-foreground">
       <div className="container mx-auto px-4">
         <AnimatedSection className="flex flex-col items-center">
-          <TypewriterHeading 
+          <TypewriterHeading
             text="About Me"
-            className="text-3xl md:text-4xl font-headline font-bold text-center mb-12" 
+            className="text-3xl md:text-4xl font-headline font-bold text-center mb-12"
           />
-          
+
           <div className="grid md:grid-cols-3 gap-8 items-start">
             <div className="md:col-span-1 flex justify-center">
               <Image
                 src={profilePic}
                 alt="Profile Picture"
-                width={250} 
+                width={250}
                 height={250}
                 className="w-[200px] h-[200px] md:w-[250px] md:h-[250px] rounded-lg shadow-xl border-4 border-primary"
                 data-ai-hint="professional portrait"
@@ -30,41 +37,39 @@ const AboutSection = () => {
             </div>
 
             <div className="md:col-span-2 space-y-6">
-              <p className="text-lg font-body text-muted-foreground leading-relaxed">
-                I’m a computer engineering student with a curious mindset and a willingness to explore new opportunities. While I’m still discovering my path, I enjoy being part of collaborative environments where I can learn, contribute, and grow. I believe in showing up, asking questions, and doing my best — no matter the challenge.
-              </p>
-              <p className="text-lg font-body text-muted-foreground leading-relaxed">
-                I’m someone who values consistency, teamwork, and self-improvement. I may not have everything figured out yet, but I’m committed to learning, trying new things, and becoming the best version of myself — one step at a time.
-              </p>
-              
-              {/* New Education Section */}
+              {personalInfo.bio.map((paragraph, index) => (
+                <p key={index} className="text-lg font-body text-muted-foreground leading-relaxed">
+                  {paragraph}
+                </p>
+              ))}
+
+              {/* Education Section */}
               <div className="pt-6">
                 <h3 className="text-2xl font-headline font-semibold mb-4 text-foreground">
                   Education
                 </h3>
-                <InfoCard
-                  icon={<GraduationCap className="h-8 w-8 text-primary" />}
-                  title="B.E. in Computer Engineering"
-                  description="SAL Institute of Technology and Engineering Research (2023 - 2027)"
-                />
+                {education.map((edu, index) => (
+                  <InfoCard
+                    key={index}
+                    icon={<GraduationCap className="h-8 w-8 text-primary" />}
+                    title={edu.degree}
+                    description={`${edu.institution} (${edu.duration})`}
+                  />
+                ))}
               </div>
-              
+
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-4">
-                <InfoCard
-                  icon={<Zap className="h-8 w-8 text-primary" />}
-                  title="Curiosity"
-                  description="Eager to explore new technologies and solve challenging problems."
-                />
-                <InfoCard
-                  icon={<Users className="h-8 w-8 text-primary" />}
-                  title="Collaboration"
-                  description="Thrive in team settings, valuing shared learning and growth."
-                />
-                <InfoCard
-                  icon={<ArrowUp className="h-8 w-8 text-primary" />}
-                  title="Self-Improvement"
-                  description="Dedicated to continuous learning and personal development."
-                />
+                {coreValues.map((value, index) => {
+                  const IconComponent = iconMap[value.iconName as keyof typeof iconMap] || Zap;
+                  return (
+                    <InfoCard
+                      key={index}
+                      icon={<IconComponent className="h-8 w-8 text-primary" />}
+                      title={value.title}
+                      description={value.description}
+                    />
+                  );
+                })}
               </div>
             </div>
           </div>

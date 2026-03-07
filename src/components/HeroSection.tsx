@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import AnimatedSection from './AnimatedSection';
 import { ArrowDown, Download } from 'lucide-react';
+import { cvData } from '@/data/cvData';
 
 const HeroSection = () => {
   const textRef = useRef<SVGTextElement>(null);
@@ -27,26 +28,26 @@ const HeroSection = () => {
 
         anime.timeline({
           loop: true,
-          easing: 'easeInOutQuad', 
+          easing: 'easeInOutQuad',
           delay: 500, // Initial delay for the entire timeline before first loop
         })
-        .add({
-          targets: textElement,
-          strokeDashoffset: { value: 0, duration: 2000, easing: 'easeInOutQuad' },
-        })
-        .add({
-          targets: textElement,
-          fillOpacity: { value: 1, duration: 500, easing: 'linear' },
-          offset: '-=500', // Start fill animation 500ms before stroke animation ends
-        })
-        .add({ // Hold the filled state
-          duration: 1500,
-        })
-        .add({ // Prepare for next loop: make fill transparent and stroke offset back to length
-          targets: textElement,
-          fillOpacity: { value: 0, duration: 500, easing: 'linear' },
-          strokeDashoffset: { value: length, duration: 500, easing: 'linear' }, // Quick reset for stroke
-        });
+          .add({
+            targets: textElement,
+            strokeDashoffset: { value: 0, duration: 2000, easing: 'easeInOutQuad' },
+          })
+          .add({
+            targets: textElement,
+            fillOpacity: { value: 1, duration: 500, easing: 'linear' },
+            offset: '-=500', // Start fill animation 500ms before stroke animation ends
+          })
+          .add({ // Hold the filled state
+            duration: 1500,
+          })
+          .add({ // Prepare for next loop: make fill transparent and stroke offset back to length
+            targets: textElement,
+            fillOpacity: { value: 0, duration: 500, easing: 'linear' },
+            strokeDashoffset: { value: length, duration: 500, easing: 'linear' }, // Quick reset for stroke
+          });
       });
     }
   }, []);
@@ -60,24 +61,24 @@ const HeroSection = () => {
         <AnimatedSection className="flex flex-col items-center" initialY={20} staggerDelay={200}>
           <h1 className="text-5xl md:text-7xl font-headline font-bold mb-6 leading-tight">
             <span className="block">Hi, I'm{' '}
-              <svg 
-                ref={svgRef} 
-                style={{ 
+              <svg
+                ref={svgRef}
+                style={{
                   height: "1em", // Match line height
-                  display: "inline-block", 
+                  display: "inline-block",
                   verticalAlign: "bottom", // Align with text baseline
-                  overflow: "visible" 
+                  overflow: "visible"
                 }}
                 aria-label="Hardi Patel"
               >
-                <text 
-                  ref={textRef} 
-                  x="0" 
+                <text
+                  ref={textRef}
+                  x="0"
                   y="0.85em" // Adjust for typical font baseline; may need fine-tuning per font
                   className="font-headline font-bold" // Ensured it matches h1 style
-                  style={{ 
+                  style={{
                     fontSize: "1em", // Inherit font size from h1 parent
-                    stroke: "hsl(var(--primary))", 
+                    stroke: "hsl(var(--primary))",
                     strokeWidth: 1.5, // Adjusted for better visibility
                     fill: "transparent", // Initial fill before animation
                     strokeLinecap: "round",
@@ -97,7 +98,7 @@ const HeroSection = () => {
               <Link href="#projects">View My Work</Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="font-headline shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-              <Link href="https://1drv.ms/w/c/ae6ee91ec4884036/EWlGJKBoyEJAvVHekkxRPKIBlOnjZfL2ccIhuzpxpFGfYw?e=8Oc9FB" download="Hardi_Patel_CV.docx" target="_blank" rel="noopener noreferrer">
+              <Link href={cvData.personalInfo.resumeLink} download="Hardi_Patel_CV.docx" target="_blank" rel="noopener noreferrer">
                 <Download className="mr-2 h-5 w-5" />
                 Download CV
               </Link>

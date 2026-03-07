@@ -7,43 +7,19 @@ import TypewriterHeading from './TypewriterHeading';
 import { Github, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 
-interface Project {
-  id: string;
-  title: string;
-  description: string;
-  tags: string[];
-  liveLink?: string;
-  githubLink?: string;
-}
-
-const projectsData: Project[] = [
-  {
-    id: '1',
-    title: 'Bank Link Integrated Service',
-    description: 'A smart, data-driven web solution designed to reduce unnecessary bank visits by helping users pre-book appointments and receive precise guidance on required documents, just built the frontend using the HTML and tailwind css.',
-    tags: ['HTML', 'Tailwind CSS', 'Frontend'],
-    githubLink: 'https://github.com/simitmodi/Bank-Link-Integrated-Services',
-  },
-  {
-    id: '2',
-    title: 'To-Do list',
-    description: 'Developed a robust, lightweight terminal-based To-Do List application using core Java, designed to optimize personal task management through a minimalist menu driven solution.',
-    tags: ['Java', 'CLI', 'Task Management'],
-    githubLink: 'https://github.com/simitmodi/ToDoList',
-  },
-];
+import { cvData } from '@/data/cvData';
 
 const ProjectsSection = () => {
   return (
     <section id="projects" className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
         <AnimatedSection className="flex flex-col items-center">
-          <TypewriterHeading 
+          <TypewriterHeading
             text="Featured Projects"
-            className="text-3xl md:text-4xl font-headline font-bold text-center mb-12" 
+            className="text-3xl md:text-4xl font-headline font-bold text-center mb-12"
           />
           <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 w-full max-w-4xl">
-            {projectsData.map((project) => (
+            {cvData.projects.map((project) => (
               <Card key={project.id} className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 ease-out cursor-none transform hover:scale-105">
                 <CardHeader>
                   <div className="flex items-center space-x-2">
