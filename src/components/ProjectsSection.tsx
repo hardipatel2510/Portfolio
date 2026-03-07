@@ -44,16 +44,16 @@ const ProjectsSection = () => {
                   </div>
                 </CardContent>
                 <CardFooter className="flex justify-end space-x-2">
-                  {project.githubLink && (
+                  {(project as any).githubLink && (
                     <Button variant="outline" size="sm" asChild>
-                      <Link href={project.githubLink} target="_blank" rel="noopener noreferrer" aria-label={`GitHub repository for ${project.title}`}>
+                      <Link href={(project as any).githubLink} target="_blank" rel="noopener noreferrer" aria-label={`GitHub repository for ${project.title}`}>
                         <Github className="mr-2 h-4 w-4" /> GitHub
                       </Link>
                     </Button>
                   )}
-                  {project.liveLink && (
+                  {(project as any).liveLink && (
                     <Button variant="default" size="sm" asChild>
-                      <Link href={project.liveLink} target="_blank" rel="noopener noreferrer" aria-label={`Live demo of ${project.title}`}>
+                      <Link href={(project as any).liveLink} target="_blank" rel="noopener noreferrer" aria-label={`Live demo of ${project.title}`}>
                         <ExternalLink className="mr-2 h-4 w-4" /> Live Demo
                       </Link>
                     </Button>
