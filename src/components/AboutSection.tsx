@@ -13,6 +13,7 @@ const iconMap = {
 };
 
 const AboutSection = () => {
+  console.log('cvData in AboutSection:', cvData);
   const { personalInfo, education, coreValues } = cvData;
 
   return (

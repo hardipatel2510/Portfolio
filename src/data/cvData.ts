@@ -95,6 +95,7 @@ export const cvData = {
       iconName: 'Database' as const,
       skills: [
         { name: 'Java / OOP', proficiency: 90 },
+        { name: 'Python', proficiency: 85 },
         { name: 'DSA', proficiency: 85 },
         { name: 'SQL / Databases', proficiency: 80 },
         { name: 'Git / GitHub', proficiency: 90 },
@@ -104,6 +105,7 @@ export const cvData = {
       name: 'Design & UI/UX',
       iconName: 'PencilRuler' as const,
       skills: [
+        { name: 'Figma', proficiency: 80 },
         { name: 'Glassmorphism', proficiency: 95 },
         { name: 'Responsive Design', proficiency: 100 },
         { name: 'Canva / Mockups', proficiency: 85 },
