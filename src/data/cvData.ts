@@ -154,6 +154,21 @@ export const cvData = {
       description: 'Space Intelligence Platform featuring a Pinterest-style layout.',
       tags: ['Next.js', 'React', 'Space Tech'],
       isCompleted: false,
+    },
+    {
+      id: '5',
+      title: 'Bank Link Integrated Service',
+      description: 'Data-driven solution for banking document prep and appointment scheduling.',
+      tags: ['HTML', 'Tailwind', 'Frontend'],
+      githubLink: 'https://github.com/simitmodi/Bank-Link-Integrated-Services',
+      isCompleted: true,
+    },
+    {
+      id: '6',
+      title: 'To-Do list',
+      description: 'Robust terminal-based task management solution built with core Java and optimized file handling.',
+      tags: ['Java', 'CLI', 'Task Management'],
+      isCompleted: true,
     }
   ],
   coreValues: [

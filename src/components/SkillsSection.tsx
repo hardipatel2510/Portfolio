@@ -83,26 +83,27 @@ const SkillsSection = () => {
           />
 
           <div className="space-y-20 w-full max-w-6xl">
-            {cvData.skills.map((category) => {
-              const IconComponent = iconMap[category.iconName as keyof typeof iconMap] || Code2;
+            {cvData.technicalSkills.map((category) => {
+              const IconComponent = iconMap[category.category] || Code2;
 
               return (
-                <div key={category.name} className="flex flex-col items-center">
+                <div key={category.category} className="flex flex-col items-center">
                   <div className="flex items-center gap-4 mb-10 group">
                     <div className="p-3 rounded-xl bg-white/5 border border-white/10 group-hover:border-primary/50 transition-colors">
                       <IconComponent className="h-8 w-8 text-primary" />
                     </div>
                     <h3 className="text-2xl md:text-3xl font-headline font-bold tracking-tight">
-                      {category.name}
+                      {category.category}
                     </h3>
                   </div>
 
                   <div className="flex flex-wrap justify-center gap-6 md:gap-8">
-                    {category.skills.map((skill, idx) => (
+                    {category.skills.map((skillName, idx) => (
                       <SkillCard
-                        key={skill.name}
-                        {...skill}
-                        categoryName={category.name}
+                        key={skillName}
+                        name={skillName}
+                        proficiency={90} // Default proficiency as it's just names now
+                        categoryName={category.category}
                         index={idx}
                       />
                     ))}
