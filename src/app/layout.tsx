@@ -3,7 +3,6 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import ScrollToTopButton from '@/components/ScrollToTopButton';
-import BackgroundAnimation from '@/components/BackgroundAnimation';
 
 export const metadata: Metadata = {
   title: 'Hardi Patel - Portfolio',
@@ -48,8 +47,7 @@ export default function RootLayout({
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
       <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;700&display=swap" rel="stylesheet" />
-    </head><body className="font-body antialiased relative">
-        <BackgroundAnimation />
+    </head><body className="font-body antialiased">
         {children}
         <Toaster />
         <ScrollToTopButton />

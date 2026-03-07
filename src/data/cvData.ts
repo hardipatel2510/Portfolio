@@ -95,7 +95,7 @@ export const cvData = {
       iconName: 'Database' as const,
       skills: [
         { name: 'Java / OOP', proficiency: 90 },
-        { name: 'Python', proficiency: 85 },
+        { name: 'Python', proficiency: 75 },
         { name: 'DSA', proficiency: 85 },
         { name: 'SQL / Databases', proficiency: 80 },
         { name: 'Git / GitHub', proficiency: 90 },
