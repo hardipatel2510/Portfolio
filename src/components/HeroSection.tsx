@@ -61,40 +61,45 @@ const HeroSection = () => {
     >
       <div className="relative z-20 container mx-auto px-4">
         <AnimatedSection className="flex flex-col items-center" initialY={20} staggerDelay={200}>
-          <h1 className="text-5xl md:text-7xl font-headline font-bold mb-6 leading-tight">
+          <h1 className="text-5xl md:text-7xl font-headline font-bold mb-4 leading-tight">
             <span className="block">Hi, I'm{' '}
               <svg
                 ref={svgRef}
                 style={{
-                  height: "1em", // Match line height
+                  height: "1.1em", // Slightly taller for stroke
                   display: "inline-block",
-                  verticalAlign: "bottom", // Align with text baseline
+                  verticalAlign: "baseline",
                   overflow: "visible"
                 }}
-                aria-label="Hardi Patel"
+                aria-label={cvData.personalInfo.name}
               >
                 <text
                   ref={textRef}
-                  x="0"
-                  y="0.85em" // Adjust for typical font baseline; may need fine-tuning per font
-                  className="font-headline font-bold" // Ensured it matches h1 style
+                  x="4" // Initial offset for padding
+                  y="0.8em"
+                  className="font-headline font-bold"
                   style={{
-                    fontSize: "1em", // Inherit font size from h1 parent
+                    fontSize: "1em",
                     stroke: "hsl(var(--primary))",
-                    strokeWidth: 1.5, // Adjusted for better visibility
-                    fill: "transparent", // Initial fill before animation
+                    strokeWidth: 2, // Slightly thicker
+                    fill: "transparent",
                     strokeLinecap: "round",
                     strokeLinejoin: "round",
                   }}
                 >
-                  Hardi Patel
+                  {cvData.personalInfo.name}
                 </text>
               </svg>
             </span>
           </h1>
-          <p className="text-lg md:text-xl font-body max-w-2xl mb-10 text-muted-foreground">
-            As a Computer Engineering student, I'm driven to create applications that are not only efficient but also intuitive. With a foundation in Java and DSA, I am ready to build innovative software that solves complex, real-world challenges.
-          </p>
+          <h2 className="text-2xl md:text-3xl font-headline font-semibold text-primary mb-6">
+            {cvData.personalInfo.title}
+          </h2>
+          <div className="text-lg md:text-xl font-body max-w-2xl mb-10 text-muted-foreground space-y-4 text-center">
+            {cvData.personalInfo.bio.map((paragraph, index) => (
+              <p key={index}>{paragraph}</p>
+            ))}
+          </div>
           <div className="flex flex-wrap justify-center gap-4">
             <Button asChild size="lg" className="font-headline shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
               <Link href="#projects">View My Work</Link>

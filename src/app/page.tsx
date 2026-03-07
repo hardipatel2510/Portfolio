@@ -17,6 +17,7 @@ export default function Home() {
         <ExperienceSection />
         <ProjectsSection />
         <SkillsSection />
+        <div style={{ display: 'none' }}>VERIFICATION_TAG_12345</div>
         <ContactSection />
       </main>
       <Footer />
