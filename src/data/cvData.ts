@@ -168,6 +168,7 @@ export const cvData = {
       title: 'To-Do list',
       description: 'Robust terminal-based task management solution built with core Java and optimized file handling.',
       tags: ['Java', 'CLI', 'Task Management'],
+      githubLink: 'https://github.com/hardipatel2510/To-Do-List',
       isCompleted: true,
     }
   ],
