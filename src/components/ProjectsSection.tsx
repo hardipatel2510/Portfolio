@@ -18,7 +18,7 @@ const ProjectsSection = () => {
             text="Featured Projects"
             className="text-3xl md:text-4xl font-headline font-bold text-center mb-12"
           />
-          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 w-full max-w-4xl">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
             {cvData.projects.map((project) => (
               <Card key={project.id} className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 ease-out cursor-none transform hover:scale-105">
                 <CardHeader>
