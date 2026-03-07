@@ -40,123 +40,138 @@ export interface Education {
 export const cvData = {
   personalInfo: {
     name: "Hardi Patel",
-    title: "Computer Engineering Student",
+    title: "Full-Stack Software Engineer & Computer Engineering Student",
     bio: [
-      "I’m a computer engineering student with a curious mindset and a willingness to explore new opportunities. While I’m still discovering my path, I enjoy being part of collaborative environments where I can learn, contribute, and grow. I believe in showing up, asking questions, and doing my best — no matter the challenge.",
-      "I’m someone who values consistency, teamwork, and self-improvement. I may not have everything figured out yet, but I’m committed to learning, trying new things, and becoming the best version of myself — one step at a time."
+      "I am a results-driven Computer Engineering student at SAL Institute of Technology, specializing in building modern web applications with a focus on performance and user experience. My expertise spans core Java and Data Structures to advanced full-stack development using Next.js, React, and Tailwind CSS.",
+      "Driven by curiosity and a commitment to excellence, I have architected diverse solutions ranging from banking ecosystems to social support platforms. My goal is to leverage my technical foundation and collaborative mindset to solve complex real-world challenges while continuously evolving as a developer."
     ],
     resumeLink: "https://1drv.ms/w/c/ae6ee91ec4884036/EWlGJKBoyEJAvVHekkxRPKIBlOnjZfL2ccIhuzpxpFGfYw?e=8Oc9FB",
   },
   education: [
     {
-      degree: "B.E. in Computer Engineering",
-      institution: "SAL Institute of Technology and Engineering Research",
+      degree: "Bachelor of Engineering (B.E.) in Computer Engineering",
+      institution: "SAL Institute of Technology and Engineering Research (GTU)",
       duration: "2023 - 2027",
     }
   ],
   experience: [
-    // Placeholder for now, user can fill this in
     {
-      id: 'exp1',
-      company: 'TBD',
-      position: 'Computer Engineering Intern/Student',
+      id: 'proj-lead',
+      company: 'Self-Directed Projects',
+      position: 'Full-Stack Developer',
       duration: 'Ongoing',
       description: [
-        'Actively learning and applying core engineering principles.',
-        'Working on personal projects to build a strong foundation in Java and DSA.',
-        'Collaborating with peers on academic and personal coding initiatives.'
+        'Architected and implemented "Stride," an intelligent banking ecosystem designed to eliminate institutional friction through digital intelligence and document mastery.',
+        'Developed "SafeVoices," a secure case-tracking and support platform for sexual harassment victims, utilizing modern glassmorphism UI for a calm and professional experience.',
+        'Engineered "WeatherX," a mobile-first dashboard featuring dynamic time-based themes and advanced CSS blur effects for a premium native app feel.',
+        'Built "AstraIntel," a Pinterest-style Space Intelligence Platform with smooth transitions and high-fidelity UI components.'
+      ]
+    },
+    {
+      id: 'academic',
+      company: 'SAL Institute of Technology',
+      position: 'Computer Engineering Student',
+      duration: '2023 - Present',
+      description: [
+        'Consistently applying core engineering principles to project-based learning.',
+        'Mastering Java and Data Structures & Algorithms (DSA) through hands-on development of CLI and GUI applications.',
+        'Actively participating in collaborative coding environments and peer-led technical initiatives.'
       ]
     }
   ],
   skills: [
     {
-      name: 'Programming Languages',
+      name: 'Frontend Development',
       iconName: 'Code2' as const,
       skills: [
-        { name: 'HTML', proficiency: 40 },
-        { name: 'Java', proficiency: 60 },
-        { name: 'CSS', proficiency: 30 },
-        { name: 'DSA', proficiency: 40 },
+        { name: 'React / Next.js', proficiency: 90 },
+        { name: 'Tailwind CSS', proficiency: 95 },
+        { name: 'HTML5 / CSS3', proficiency: 95 },
+        { name: 'TypeScript', proficiency: 85 },
       ],
     },
     {
-      name: 'Databases',
+      name: 'Backend & Algorithms',
       iconName: 'Database' as const,
       skills: [
-        { name: 'SQL', proficiency: 70 },
+        { name: 'Java / OOP', proficiency: 90 },
+        { name: 'DSA', proficiency: 85 },
+        { name: 'SQL / Databases', proficiency: 80 },
+        { name: 'Git / GitHub', proficiency: 90 },
       ],
     },
     {
-      name: 'Design Tools',
+      name: 'Design & UI/UX',
       iconName: 'PencilRuler' as const,
       skills: [
-        { name: 'Canva', proficiency: 75 },
+        { name: 'Glassmorphism', proficiency: 95 },
+        { name: 'Responsive Design', proficiency: 100 },
+        { name: 'Canva / Mockups', proficiency: 85 },
       ],
     },
   ],
   projects: [
     {
       id: '1',
-      title: 'Bank Link Integrated Service',
-      description: 'A smart, data-driven web solution designed to reduce unnecessary bank visits by helping users pre-book appointments and receive precise guidance on required documents. Built a responsive frontend using HTML and Tailwind CSS.',
-      tags: ['HTML', 'Tailwind CSS', 'Frontend'],
-      githubLink: 'https://github.com/simitmodi/Bank-Link-Integrated-Services',
-      isCompleted: true,
-    },
-    {
-      id: '2',
-      title: 'To-Do list',
-      description: 'Developed a robust, lightweight terminal-based To-Do List application using core Java, designed to optimize personal task management through a minimalist menu-driven solution.',
-      tags: ['Java', 'CLI', 'Task Management'],
-      githubLink: 'https://github.com/simitmodi/ToDoList',
-      isCompleted: true,
-    },
-    {
-      id: '3',
-      title: 'AstraIntel Platform',
-      description: 'A multi-page, responsive Space Intelligence Platform with a NASA-inspired UI. Featuring a Pinterest-style layout, neon accents, and smooth glass-style card transitions for a professional space agency experience.',
-      tags: ['Next.js', 'React', 'Space Tech', 'UI/UX'],
-      isCompleted: false,
-    },
-    {
-      id: '4',
-      title: 'WeatherX Dashboard',
-      description: 'An Apple Weather-style responsive dashboard featuring dynamic themes that update based on local time. Implemented glassmorphism styling and gradual blur effects for a premium mobile-first experience.',
-      tags: ['Next.js', 'Dynamic Theming', 'Glassmorphism', 'Responsive Design'],
-      githubLink: 'https://github.com/hardipatel2510/WeatherX',
-      isCompleted: true,
-    },
-    {
-      id: '5',
       title: 'Stride',
-      description: 'An intelligent ecosystem architected to redefine the Indian banking experience. Features Elite Dashboards for personalized financial agendas, Instant Intelligence for proactive notifications, Document Mastery for precision guidance, and Data-Driven Insights to eliminate wait times.',
-      tags: ['Modern Banking', 'Personalized Dashboards', 'Proactive Notifications', 'Document Mastery'],
+      description: 'An intelligent banking ecosystem architected to redefine Indian financial processes. Features include Elite Dashboards, Document Mastery, and Data-Driven Insights.',
+      tags: ['Next.js', 'Finance', 'System Architecture'],
       githubLink: 'https://github.com/simitmodi/Stride',
       isCompleted: false,
     },
     {
-      id: '6',
+      id: '2',
       title: 'SafeVoices',
-      description: 'A sexual harassment support and case tracking website designed for SAL Education. Features a safe, professional environment with a modern glassmorphism UI, including features for tracking cases and administrative dashboards.',
-      tags: ['Next.js', 'React', 'Tailwind CSS', 'Glassmorphism'],
-      githubLink: 'https://github.com/simitmodi/SafeVoices', // Placeholder/Common pattern
+      description: 'A secure support and tracking platform for sexual harassment victims. Prioritizes safety and professional trust through a modern glassmorphism interface.',
+      tags: ['Safety', 'Next.js', 'Glassmorphism'],
+      githubLink: 'https://github.com/simitmodi/SafeVoices',
       isCompleted: false,
+    },
+    {
+      id: '3',
+      title: 'WeatherX Dashboard',
+      description: 'Premium Apple-Weather-style dashboard with time-sensitive dynamic themes and gradual blur effects.',
+      tags: ['Mobile-First', 'Next.js', 'Advanced CSS'],
+      githubLink: 'https://github.com/hardipatel2510/WeatherX',
+      isCompleted: true,
+    },
+    {
+      id: '4',
+      title: 'AstraIntel Platform',
+      description: 'Space Intelligence Platform featuring a Pinterest-style layout and high-fidelity NASA-inspired UI.',
+      tags: ['Next.js', 'React', 'Space Tech'],
+      isCompleted: false,
+    },
+    {
+      id: '5',
+      title: 'Bank Link Integrated Service',
+      description: 'Data-driven solution for banking document prep and appointment scheduling.',
+      tags: ['HTML', 'Tailwind', 'Frontend'],
+      githubLink: 'https://github.com/simitmodi/Bank-Link-Integrated-Services',
+      isCompleted: true,
+    },
+    {
+      id: '6',
+      title: 'To-Do list',
+      description: 'Robust terminal-based task management solution built with core Java and optimized file handling.',
+      tags: ['Java', 'CLI', 'Task Management'],
+      isCompleted: true,
     },
   ] as Project[],
   coreValues: [
     {
-      title: 'Curiosity',
-      description: 'Eager to explore new technologies and solve challenging problems.',
+      title: 'Excellence',
+      description: 'Committed to high-quality code and aesthetic visual experiences.',
       iconName: 'Zap'
     },
     {
-      title: 'Collaboration',
-      description: 'Thrive in team settings, valuing shared learning and growth.',
+      title: 'Social Impact',
+      description: 'Building technology that solves meaningful human and institutional problems.',
       iconName: 'Users'
     },
     {
-      title: 'Self-Improvement',
-      description: 'Dedicated to continuous learning and personal development.',
+      title: 'Continuous Growth',
+      description: 'Always evolving through self-directed learning and engineering challenges.',
       iconName: 'ArrowUp'
     }
   ]

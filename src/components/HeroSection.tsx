@@ -20,7 +20,9 @@ const HeroSection = () => {
       // Ensure styles are applied and text is measurable
       requestAnimationFrame(() => {
         const length = textElement.getComputedTextLength();
-        svgElement.style.width = `${length}px`; // Set SVG width dynamically
+        const padding = 8; // Extra space for stroke width
+        svgElement.style.width = `${length + padding}px`; // Set SVG width with padding
+        textElement.setAttribute('x', (padding / 2).toString()); // Center text within padded SVG
 
         textElement.style.strokeDasharray = `${length}`;
         textElement.style.strokeDashoffset = `${length}`;
