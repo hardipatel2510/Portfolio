@@ -4,7 +4,7 @@ import { Progress } from '@/components/ui/progress';
 import AnimatedSection from './AnimatedSection';
 import TypewriterHeading from './TypewriterHeading';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Code2, Database, PencilRuler, Brain, Heart, Globe2 } from 'lucide-react';
+import { Code2, Database, PencilRuler, Brain, Heart, Terminal, Cpu, HardDrive } from 'lucide-react';
 import { cvData } from '@/data/cvData';
 
 const iconMap: Record<string, any> = {
@@ -14,28 +14,17 @@ const iconMap: Record<string, any> = {
   'Tools': PencilRuler,
 };
 
-const LanguagePill = ({ name, level }: { name: string; level: string }) => {
-  const getProgress = (lvl: string) => {
-    if (lvl.toLowerCase() === 'native') return 100;
-    if (lvl.toLowerCase() === 'fluent') return 90;
-    return 75;
-  };
-
-  return (
-    <div className="flex flex-col gap-2 p-3 rounded-xl bg-primary/5 border border-primary/10 hover:border-primary/30 transition-all duration-300">
-      <div className="flex justify-between items-center">
-        <span className="font-headline font-semibold text-sm">{name}</span>
-        <span className="text-[10px] uppercase tracking-wider text-primary font-bold">{level}</span>
-      </div>
-      <div className="w-full h-1 bg-primary/10 rounded-full overflow-hidden">
-        <div
-          className="h-full bg-primary transition-all duration-1000 ease-out"
-          style={{ width: `${getProgress(level)}%` }}
-        />
-      </div>
+const WorkflowItem = ({ icon: Icon, label, description }: { icon: any; label: string; description: string }) => (
+  <div className="flex items-start gap-3 p-3 rounded-xl bg-primary/5 border border-primary/10 hover:border-primary/30 transition-all duration-300 group">
+    <div className="p-2 rounded-lg bg-primary/10 text-primary group-hover:scale-110 transition-transform">
+      <Icon className="h-4 w-4" />
     </div>
-  );
-};
+    <div>
+      <p className="text-sm font-headline font-bold">{label}</p>
+      <p className="text-[10px] text-muted-foreground uppercase tracking-widest">{description}</p>
+    </div>
+  </div>
+);
 
 const SkillsSection = () => {
   return (
@@ -87,27 +76,27 @@ const SkillsSection = () => {
               </CardContent>
             </Card>
 
-            {/* Replaced Language Component with a more dynamic UI */}
+            {/* New Dev Workflow Component */}
             <Card className="shadow-lg hover:shadow-xl transition-all duration-300 ease-out cursor-none transform hover:scale-105 bg-card border-primary/20">
               <CardHeader className="flex flex-row items-center space-x-3 pb-4">
-                <Globe2 className="h-6 w-6 text-primary" />
-                <CardTitle className="font-headline text-xl">World Languages</CardTitle>
+                <Terminal className="h-6 w-6 text-primary" />
+                <CardTitle className="font-headline text-xl">Dev Workflow</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="grid grid-cols-1 gap-3">
-                  {cvData.languages.map((lang) => (
-                    <LanguagePill key={lang.name} name={lang.name} level={lang.level} />
-                  ))}
+                  <WorkflowItem icon={Code2} label="VS Code & IntelliJ" description="Primary IDEs" />
+                  <WorkflowItem icon={Cpu} label="Git & GitHub" description="Version Control" />
+                  <WorkflowItem icon={HardDrive} label="Mac & Linux" description="Environments" />
                 </div>
 
                 <div className="pt-4 border-t border-white/10">
                   <div className="flex items-center gap-2 mb-3">
                     <Heart className="h-5 w-5 text-primary animate-pulse" />
-                    <span className="font-headline font-bold">Interests</span>
+                    <span className="font-headline font-bold text-sm">Passions</span>
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {cvData.interests.map((interest) => (
-                      <span key={interest} className="px-3 py-1 bg-primary/10 border border-primary/20 text-primary text-xs font-bold rounded-lg hover:bg-primary hover:text-white transition-all">
+                      <span key={interest} className="px-2 py-1 bg-primary/10 border border-primary/20 text-primary text-[10px] font-bold rounded-md hover:bg-primary hover:text-white transition-all uppercase tracking-tighter">
                         {interest}
                       </span>
                     ))}
