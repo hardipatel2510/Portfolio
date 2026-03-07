@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import AnimatedSection from './AnimatedSection';
 import { ArrowDown, Download } from 'lucide-react';
+import { cvData } from '@/data/cvData';
 
 const HeroSection = () => {
   const textRef = useRef<SVGTextElement>(null);
@@ -19,7 +20,9 @@ const HeroSection = () => {
       // Ensure styles are applied and text is measurable
       requestAnimationFrame(() => {
         const length = textElement.getComputedTextLength();
-        svgElement.style.width = `${length}px`; // Set SVG width dynamically
+        const padding = 8; // Extra space for stroke width
+        svgElement.style.width = `${length + padding}px`; // Set SVG width with padding
+        textElement.setAttribute('x', (padding / 2).toString()); // Center text within padded SVG
 
         textElement.style.strokeDasharray = `${length}`;
         textElement.style.strokeDashoffset = `${length}`;
@@ -97,7 +100,7 @@ const HeroSection = () => {
               <Link href="#projects">View My Work</Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="font-headline shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-              <Link href="https://1drv.ms/w/c/ae6ee91ec4884036/EWlGJKBoyEJAvVHekkxRPKIBlOnjZfL2ccIhuzpxpFGfYw?e=8Oc9FB" download="Hardi_Patel_CV.docx" target="_blank" rel="noopener noreferrer">
+              <Link href={cvData.personalInfo.resumeLink} download="Hardi_Patel_CV.docx" target="_blank" rel="noopener noreferrer">
                 <Download className="mr-2 h-5 w-5" />
                 Download CV
               </Link>
