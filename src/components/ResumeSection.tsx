@@ -6,12 +6,14 @@ import AnimatedSection from './AnimatedSection';
 import { Card, CardContent } from '@/components/ui/card';
 import {
     Mail, Linkedin, MapPin, Github,
-    GraduationCap, Zap, Users, ArrowUp,
+    GraduationCap, Zap, ArrowUp,
     BookOpen, Brain, Code2, Heart, Languages,
     Download, Printer
 } from 'lucide-react';
+import Image from 'next/image';
 import { cvData } from '@/data/cvData';
 import { cn } from '@/lib/utils';
+import profilePic from '@/lib/Photo.png';
 
 const ResumeSection = () => {
     const containerRef = useRef<HTMLDivElement>(null);
