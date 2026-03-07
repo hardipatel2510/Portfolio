@@ -142,7 +142,7 @@ export const cvData = {
       githubLink: 'https://github.com/simitmodi/SafeVoices', // Placeholder/Common pattern
       isCompleted: false,
     },
-  ],
+  ] as Project[],
   coreValues: [
     {
       title: 'Curiosity',
