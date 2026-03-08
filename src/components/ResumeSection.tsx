@@ -139,7 +139,7 @@ const ResumeSection = () => {
                                             <p className="text-sm font-bold uppercase tracking-wider text-primary print:text-black">{group.category}</p>
                                             <div className="flex flex-wrap gap-2">
                                                 {group.skills.map((skill, i) => (
-                                                    <div key={i} className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-xl text-sm font-medium hover:bg-primary/10 transition-colors print:border-black/10 print:text-black">
+                                                    <div key={i} className="px-4 py-2 bg-white text-slate-800 border border-slate-100 shadow-sm rounded-full text-sm font-bold hover:scale-105 transition-all print:border-black/10 print:text-black">
                                                         {skill}
                                                     </div>
                                                 ))}

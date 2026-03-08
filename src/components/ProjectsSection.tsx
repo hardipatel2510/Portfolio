@@ -37,7 +37,7 @@ const ProjectsSection = () => {
                 <CardContent className="flex-grow">
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tags.map((tag) => (
-                      <span key={tag} className="px-2 py-1 bg-primary/10 text-primary text-xs font-code rounded-full">
+                      <span key={tag} className="px-3 py-1 bg-white text-slate-800 text-[10px] font-bold border border-slate-100 shadow-sm rounded-full">
                         {tag}
                       </span>
                     ))}
