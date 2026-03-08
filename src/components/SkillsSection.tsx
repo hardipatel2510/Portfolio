@@ -91,14 +91,15 @@ const SkillsSection = () => {
 
                 <div className="pt-4 border-t border-white/10">
                   <div className="flex items-center gap-2 mb-3">
-                    <Heart className="h-5 w-5 text-primary animate-pulse" />
                     <span className="font-headline font-bold text-sm">Passions</span>
                   </div>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-4">
                     {cvData.interests.map((interest) => (
-                      <span key={interest} className="px-2 py-1 bg-primary/10 border border-primary/20 text-primary text-[10px] font-bold rounded-md hover:bg-primary hover:text-white transition-all uppercase tracking-tighter">
-                        {interest}
-                      </span>
+                      <div key={interest} className="px-8 py-5 bg-white text-slate-900 border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-[2rem] hover:scale-105 transition-all duration-300">
+                        <span className="text-base font-headline font-bold tracking-tight">
+                          {interest}
+                        </span>
+                      </div>
                     ))}
                   </div>
                 </div>

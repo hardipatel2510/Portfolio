@@ -190,14 +190,15 @@ const ResumeSection = () => {
                         <Card className="bg-white/5 backdrop-blur-xl border-white/10 shadow-xl print:bg-white print:border-black/5 print:shadow-none">
                             <CardContent className="p-6">
                                 <div className="flex items-center gap-3 mb-6">
-                                    <Heart className="h-6 w-6 text-primary print:text-black" />
                                     <h3 className="text-xl font-headline font-bold print:text-black">Interests</h3>
                                 </div>
-                                <div className="flex flex-wrap gap-2">
+                                <div className="flex flex-wrap gap-6">
                                     {cvData.interests.map((interest, idx) => (
-                                        <span key={idx} className="px-3 py-1 bg-white/5 rounded-full text-sm text-muted-foreground print:border print:border-black/10 print:text-black">
-                                            {interest}
-                                        </span>
+                                        <div key={idx} className="px-10 py-6 bg-white text-slate-900 border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-[2.5rem] hover:scale-105 transition-all duration-300 print:bg-white print:text-black print:border-black/10">
+                                            <span className="text-lg font-headline font-bold tracking-tight">
+                                                {interest}
+                                            </span>
+                                        </div>
                                     ))}
                                 </div>
                             </CardContent>
