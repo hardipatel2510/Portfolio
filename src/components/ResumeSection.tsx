@@ -192,10 +192,10 @@ const ResumeSection = () => {
                                 <div className="flex items-center gap-3 mb-6">
                                     <h3 className="text-xl font-headline font-bold print:text-black">Interests</h3>
                                 </div>
-                                <div className="flex flex-wrap gap-6">
+                                <div className="flex flex-wrap gap-4">
                                     {cvData.interests.map((interest, idx) => (
-                                        <div key={idx} className="px-10 py-6 bg-white text-slate-900 border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-[2.5rem] hover:scale-105 transition-all duration-300 print:bg-white print:text-black print:border-black/10">
-                                            <span className="text-lg font-headline font-bold tracking-tight">
+                                        <div key={idx} className="px-8 py-3 bg-white text-slate-800 border border-slate-100 shadow-sm rounded-full hover:shadow-md hover:scale-105 transition-all duration-300 print:bg-white print:text-black print:border-black/10">
+                                            <span className="text-base font-headline font-bold">
                                                 {interest}
                                             </span>
                                         </div>

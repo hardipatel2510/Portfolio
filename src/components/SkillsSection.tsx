@@ -93,10 +93,10 @@ const SkillsSection = () => {
                   <div className="flex items-center gap-2 mb-3">
                     <span className="font-headline font-bold text-sm">Passions</span>
                   </div>
-                  <div className="flex flex-wrap gap-4">
+                  <div className="flex flex-wrap gap-3">
                     {cvData.interests.map((interest) => (
-                      <div key={interest} className="px-8 py-5 bg-white text-slate-900 border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-[2rem] hover:scale-105 transition-all duration-300">
-                        <span className="text-base font-headline font-bold tracking-tight">
+                      <div key={interest} className="px-6 py-2 bg-white text-slate-800 border border-slate-100 shadow-sm rounded-full hover:shadow-md hover:scale-105 transition-all duration-300">
+                        <span className="text-sm font-headline font-bold">
                           {interest}
                         </span>
                       </div>
